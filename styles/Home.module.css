@@ -13,10 +13,6 @@
   src: url(../public/fonts/MontserratMedium.otf);
 }
 
-.container {
-  padding: 0 2rem;
-}
-
 .title {
   margin: 0;
   line-height: 1.15;
@@ -40,7 +36,7 @@
 .header {
   margin: 0 calc(10px + 1vmin);
   font-family: MontserratBlack, sans-serif;
-  height: 80vh;
+  height: 90vh;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -52,4 +48,29 @@
 
 .subheader {
   font-size: calc(10px + 1.6vmin);
+  line-height: calc(10px + 3vmin);
+}
+
+.ctas {
+  margin-top: 10vmin;
+}
+
+.ctaplay {
+  font-family: MontserratItalic;
+  font-size: calc(10px + 3vmin);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.ctalearn {
+  font-family: MontserratItalic;
+  font-size: calc(10px + 3vmin);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.body {
+  font-family: MontserratMedium;
+  font-size: calc(10px + 1.6vmin);
+  line-height: calc(10px + 4vmin);
 }
