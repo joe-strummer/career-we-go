@@ -13,30 +13,43 @@
   src: url(../public/fonts/MontserratMedium.otf);
 }
 
-.App {
-  text-align: center;
-  background-color: #282c34;
+.container {
+  padding: 0 2rem;
 }
 
-.App-logo {
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.App {
+  text-align: center;
+}
+
+.logo {
   margin: 0;
   letter-spacing: -3px;
 }
 
-.App-header {
+.header {
   margin: 0 calc(10px + 1vmin);
   font-family: MontserratBlack, sans-serif;
-  height: 100vh;
+  height: 80vh;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 15vmin);
   line-height: calc(10px + 12vmin);;
-  color: white;
+  /* color: rgb(240, 240, 240); */
 }
 
-.App-sub-header {
+.subheader {
   font-size: calc(10px + 1.6vmin);
 }
-
