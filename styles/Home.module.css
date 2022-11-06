@@ -74,3 +74,8 @@
   font-size: calc(10px + 1.6vmin);
   line-height: calc(10px + 4vmin);
 }
+
+.career {
+  background-color: rgba(255,255,255,0.1);
+  padding: 20px 0;
+}
