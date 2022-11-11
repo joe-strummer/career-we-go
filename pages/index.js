@@ -23,7 +23,7 @@ export default function Home() {
             </p>
             <div className={styles.ctas}>
               <p className={styles.ctaplay}>
-                <Link href='play'>PLAY</Link>
+                <Link href='play/1'>PLAY</Link>
               </p>
               <p className={styles.ctalearn}>
                 LEARN
@@ -31,7 +31,7 @@ export default function Home() {
             </div>
           </header>
         </div>
-        v0.2
+        v0.3
     </div>
   )
 }

@@ -1,12 +1,13 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Link from 'next/link'
+import { useRouter } from 'next/router';
 import { stringSimilarity } from "string-similarity-js";
-import styles from '../styles/Home.module.css'
+import styles from '../../styles/Home.module.css';
 import { useState, useEffect, useRef } from 'react';
 
-export default function Play() {    
-    const TIME = 2000;
-
-    const career = [ "1983–1991	Millwall	220	(93)",
+const data = {
+    1: {
+        career: [ "1983–1991	Millwall	220	(93)",
             "1985	→ Aldershot (loan)	5	(0)",
             "1985	→ Djurgårdens IF (loan)	21	(13)",
             "1991–1992	Nottingham Forest	42	(14)",
@@ -15,17 +16,76 @@ export default function Play() {
             "2001–2003	Tottenham Hotspur	70	(22)",
             "2003–2004	Portsmouth	32	(9)",
             "2004–2007	West Ham United	76	(28)",
-            "2007–2008	Colchester United	19	(3)"
-    ];
-
-    const answer = "Teddy Sherringham"
-
-    const acceptableAnswers = ['teddy sherringham', 
+            "2007–2008	Colchester United	19	(3)"],
+        answer: "Teddy Sherringham",
+        acceptableAnswers: ['teddy sherringham', 
             'teddy sheringham', 
             'teddy sherringam', 
-            'teddy sheringam'];
+            'teddy sheringam']
+    },
+    2: {
+        career: [
+            "2004–2006	Chelmsley Town reserves	3	(0)",
+            "2004–2006	Chelmsley Town	56	(23)",
+            "2006–2010	Walsall	123	(27)",
+            "2006–2007	→ Halesowen Town (loan)	10	(8)",
+            "2010–2021	Watford	389	(131)",
+            "2021–	Birmingham City	41	(7)"
+        ],
+        answer: "Troy Deeney",
+        acceptableAnswers: ['troy deeney', 'troy deeny', 'troy deenie', 'troy deny']
+    },
+    3: {
+        career: [
+           "2006–2017	Newcastle United	160	(0)",
+           "2007–2008	→ Falkirk (loan)	22	(0)",
+           "2008–2009	→ Carlisle United (loan)	9	(0)",
+           "2016–2017	→ Ajax (loan)	0	(0)",
+           "2016–2017	→ Jong Ajax (loan)	6	(0)",
+           "2017	→ AZ (loan)	16	(0)",
+           "2017	→ Brighton & Hove Albion (loan)	0	(0)",
+           "2017–2018	Brighton & Hove Albion	0	(0)",
+           "2018–	Norwich City	160	(0)",
+        ],
+        answer: "Tim Krul",
+        acceptableAnswers: ["tim krul", "tim krule", "tim krool", "timothy krul", "tim crool", "tim crul", "tim crule", "tim cruel", 'tim kruel']
+    },
+    4: {
+        career: [
+            "2012–2019	Genk	83	(27)",
+            "2012–2013	→ Lommel United (loan)	12	(7)",
+            "2013–2014	→ Westerlo (loan)	17	(3)",
+            "2014–2015	→ Lommel United (loan)	30	(16)",
+            "2015–2016	→ OH Leuven (loan)	30	(8)",
+            "2019–	Brighton & Hove Albion	113	(25)",
+        ],
+        answer: 'Leandro Trossard',
+        acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd']
+    }
+};
 
+export default function Play() {
+    const router = useRouter()
+    const { day } = router.query
 
+    if (!day) {
+        return <></>
+    }
+
+    const careerData = data[day[0]]
+
+    if(!careerData) {
+        return (
+            <div>
+                No data for {day}
+            </div>
+        );
+    }
+
+    const { career, answer, acceptableAnswers } = careerData;
+
+    const TIME = 2000;
+    
     const baseStyle = {
         transition: 'opacity 800ms'
     };
@@ -102,13 +162,14 @@ export default function Play() {
                         handleFinish={() => setGuessMode(false)} 
                         active={guessMode} 
                         answer={answer} 
-                        acceptableAnswers={acceptableAnswers} />
+                        acceptableAnswers={acceptableAnswers}
+                        day={day[0]} />
             </div>
         </div>
     )
 }
 
-const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
+const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, day }) => {
     const GUESS_TIME = 200;
 
     const panelStyle = {
@@ -190,6 +251,9 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
             </p>
             <p>
                 TODO: Add stats and ability to share here.
+            </p>
+            <p>
+                <a style={{color: 'blue'}} href={`/play/${Number(day)+ 1}`}>Try the next one</a>
             </p>
         </div>
         <div style={{
