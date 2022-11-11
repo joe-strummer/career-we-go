@@ -154,10 +154,18 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
     })
 
     const [ guess, setGuess ] = useState('');
+    const [ showWrong, setShowWrong ] = useState(false);
+    const [ isCorrect, setIsCorrect ] = useState(false);
 
     const handleChange = (event) => {
         setGuess(event.target.value);
     }
+
+    const closeDialog = () => {
+        setShowWrong(false);
+        setGuess('');
+        handleFinish();
+    };
     
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -166,34 +174,55 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
         acceptableAnswers.forEach(answer => console.log(answer, 'vs', trimmedGuess, Math.floor(stringSimilarity(answer, trimmedGuess) * 100), '% similarity'));
 
         if (acceptableAnswers.some(answer => stringSimilarity(answer, trimmedGuess) > 0.8)) {
-            alert(`YES! ${answer} was correct`);
+            setIsCorrect(true);
         } else {
-            alert(`${guess} was not correct`)
-            setGuess('');
-            handleFinish();
+            setShowWrong(true);
+            setTimeout(closeDialog, 1500);
         }
     }
 
-    return (<div style={panelStyle}>
-        GUESSING TIME!
-        <form onSubmit={handleSubmit}> 
-            <input 
-                ref={inputEl}
-                autoFocus={true}
-                autoComplete="off" 
-                autoCorrect="off" 
-                spellCheck="false" 
-                style={inputStyle} type="text" 
-                onSubmit={() => { alert('Guessed!')}}
-                value={ guess }
-                onChange={handleChange}
-            />
-            <Timer progress={timer} totalTime={GUESS_TIME} />
-            <input 
-                style={{marginTop: '20px'}} 
-                type="submit" value="Submit" />
-        </form>
-        <button style={{cursor: 'pointer', marginTop: '60px', padding: '40px', background:'transparent', border: 'none'}}onClick={handleFinish}>GO BACK</button>
+    return (<div style={panelStyle}>    
+        <div style={{
+            display: isCorrect ? 'block' : 'none'
+        }}>
+            <p>
+                {answer} is correct!
+            </p>
+            <p>
+                TODO: Add stats and ability to share here.
+            </p>
+        </div>
+        <div style={{
+            display: isCorrect ? 'none' : 'block'
+        }}>
+            GUESSING TIME!
+            <form onSubmit={handleSubmit}> 
+                <input 
+                    ref={inputEl}
+                    autoFocus={true}
+                    autoComplete="off" 
+                    autoCorrect="off" 
+                    spellCheck="false" 
+                    style={inputStyle} type="text" 
+                    onSubmit={() => { alert('Guessed!')}}
+                    value={ guess }
+                    onChange={handleChange}
+                />
+                <Timer progress={timer} totalTime={GUESS_TIME} />
+                <input 
+                    style={{marginTop: '20px'}} 
+                    type="submit" value="Submit" />
+                <div style={{
+                    marginTop: '20px',
+                    color: 'red',
+                    transition: 'opacity 100ms',
+                    opacity: showWrong ? 1 :0
+                }}>
+                    {guess} is wrong!
+                </div>
+            </form>
+            <button style={{cursor: 'pointer', marginTop: '40px', padding: '40px', background:'transparent', border: 'none'}}onClick={closeDialog}>GO BACK</button>
+        </div>
     </div>);
 };
 
