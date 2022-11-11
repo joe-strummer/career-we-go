@@ -166,7 +166,11 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
                 value={ guess }
                 onChange={handleChange}
             />
-            <input style={{marginTop: '20px'}} type="submit" value="Submit" />
+            <input autocomplete="off" 
+                autocorrect="off" 
+                spellcheck="false" 
+                style={{marginTop: '20px'}} 
+                type="submit" value="Submit" />
         </form>
         <button style={{marginTop: '60px', padding: '40px', background:'transparent', border: 'none'}}onClick={handleFinish}>GO BACK</button>
     </div>);
