@@ -91,7 +91,8 @@ export default function Play() {
                         opacity: 0.7,
                         background: 'red',
                         color: 'white',
-                        fontSize: '18px'
+                        fontSize: '18px',
+                        cursor: 'pointer'
                     }} onClick={() => { 
                         setGuessMode(true);
                         
@@ -108,6 +109,8 @@ export default function Play() {
 }
 
 const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
+    const GUESS_TIME = 200;
+
     const panelStyle = {
         display: active ? 'block' : 'none',
         position: 'absolute',
@@ -129,12 +132,25 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
 
     const inputEl = useRef(null);
 
+    const [timer, setTimer] = useState(GUESS_TIME)
+
     useEffect(() => {
+        let intervalId
         if (active) {
             inputEl.current.focus();
+            intervalId = setInterval(() => {
+                setTimer(timer - 1);
+            }, 
+            100);
+            if (timer <= 0) handleFinish()
         } else {
             inputEl.current.blur();
+            setGuess('');
+            clearInterval(intervalId)
+            setTimer(GUESS_TIME)
         }
+
+        return () => clearInterval(intervalId);
     })
 
     const [ guess, setGuess ] = useState('');
@@ -146,6 +162,9 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const trimmedGuess = guess.trim().toLowerCase();
+
+        acceptableAnswers.forEach(answer => console.log(answer, 'vs', trimmedGuess, Math.floor(stringSimilarity(answer, trimmedGuess) * 100), '% similarity'));
+
         if (acceptableAnswers.some(answer => stringSimilarity(answer, trimmedGuess) > 0.8)) {
             alert(`YES! ${answer} was correct`);
         } else {
@@ -156,22 +175,41 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
     }
 
     return (<div style={panelStyle}>
-        GUESSING TIME !
+        GUESSING TIME!
         <form onSubmit={handleSubmit}> 
             <input 
-                ref={inputEl} 
-                autofocus={true}
+                ref={inputEl}
+                autoFocus={true}
+                autoComplete="off" 
+                autoCorrect="off" 
+                spellCheck="false" 
                 style={inputStyle} type="text" 
                 onSubmit={() => { alert('Guessed!')}}
                 value={ guess }
                 onChange={handleChange}
             />
-            <input autocomplete="off" 
-                autocorrect="off" 
-                spellcheck="false" 
+            <Timer progress={timer} totalTime={GUESS_TIME} />
+            <input 
                 style={{marginTop: '20px'}} 
                 type="submit" value="Submit" />
         </form>
-        <button style={{marginTop: '60px', padding: '40px', background:'transparent', border: 'none'}}onClick={handleFinish}>GO BACK</button>
+        <button style={{cursor: 'pointer', marginTop: '60px', padding: '40px', background:'transparent', border: 'none'}}onClick={handleFinish}>GO BACK</button>
     </div>);
 };
+
+
+const Timer = ({ progress, totalTime }) => {
+    const percentage = progress/totalTime;
+    const fillColour = percentage > 0.4 ? 'rgba(255,255,255, 0.8)' : 'rgba(245, 10, 10, 0.8)';
+    return (
+        <svg width="100%" height="10">
+            <rect width="100%" height="10" rx="5" style={{
+                    fill: fillColour, 
+                    strokeWidth: 3, 
+                    stroke: 'rgb(0,0,0)',
+                    transform: `scaleX(${percentage})`,
+                    transition: `transform 300ms, fill 2000ms`
+            }} />
+        </svg>
+    );
+}
