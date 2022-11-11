@@ -261,21 +261,25 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, day })
         }}>
             GUESSING TIME!
             <form onSubmit={handleSubmit}> 
-                <input 
-                    ref={inputEl}
-                    autoFocus={true}
-                    autoComplete="off" 
-                    autoCorrect="off" 
-                    spellCheck="false" 
-                    style={inputStyle} type="text" 
-                    onSubmit={() => { alert('Guessed!')}}
-                    value={ guess }
-                    onChange={handleChange}
-                />
-                <Timer progress={timer} totalTime={GUESS_TIME} />
-                <input 
-                    style={{marginTop: '20px'}} 
-                    type="submit" value="Submit" />
+                <div style={{
+                    opacity: showWrong ? 0 : 1
+                }}>
+                    <input 
+                        ref={inputEl}
+                        autoFocus={true}
+                        autoComplete="off" 
+                        autoCorrect="off" 
+                        spellCheck="false" 
+                        style={inputStyle} type="text" 
+                        onSubmit={() => { alert('Guessed!')}}
+                        value={ guess }
+                        onChange={handleChange}
+                    />
+                    <Timer progress={timer} totalTime={GUESS_TIME} />
+                    <input 
+                        style={{marginTop: '20px'}} 
+                        type="submit" value="Submit" />
+                </div>
                 <div style={{
                     marginTop: '20px',
                     color: 'red',

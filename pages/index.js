@@ -31,7 +31,7 @@ export default function Home() {
             </div>
           </header>
         </div>
-        v0.3
+        v0.4
     </div>
   )
 }
