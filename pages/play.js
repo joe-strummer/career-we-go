@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { stringSimilarity } from "string-similarity-js";
 import styles from '../styles/Home.module.css'
 import { useState, useEffect, useRef } from 'react';
 
@@ -46,12 +47,11 @@ export default function Play() {
     useEffect(() => {
         const interval = setInterval(() => { 
             if (count >= career.length - 1) {
-                console.log("CLEAR!");
                 return clearInterval(interval);
             }
-            console.log('called', count); 
-            console.log('guessMode', guessMode)
-            setCount(count + 1);
+            if(!guessMode) {
+                setCount(count + 1);
+            }
         }, TIME);
         return () => clearInterval(interval);
     });
@@ -66,7 +66,7 @@ export default function Play() {
 
             <div className={styles.App}>
                 <div style={{
-                    filter: guessMode ? 'blur(8px)' : 'none'
+                    filter: guessMode ? 'blur(5px)' : 'none'
                 }}>
                     <p className={styles.subheader}>
                         CAREER WE GO
@@ -97,13 +97,17 @@ export default function Play() {
                         
                     }}>GUESS</button>
                 </div>
-                <GuessingPanel active={guessMode} answer={answer} acceptableAnswers={acceptableAnswers} />
+                <GuessingPanel 
+                        handleFinish={() => setGuessMode(false)} 
+                        active={guessMode} 
+                        answer={answer} 
+                        acceptableAnswers={acceptableAnswers} />
             </div>
         </div>
     )
 }
 
-const GuessingPanel = ({ active, answer, acceptableAnswers }) => {
+const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish }) => {
     const panelStyle = {
         display: active ? 'block' : 'none',
         position: 'absolute',
@@ -111,7 +115,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers }) => {
         width: '100vw',
         top: 0,
         left: 0,
-        background: 'rgba(0,0,0,0.8)',
+        background: 'rgba(0,0,0,0.7)',
         padding: '20px',
     };
 
@@ -126,7 +130,11 @@ const GuessingPanel = ({ active, answer, acceptableAnswers }) => {
     const inputEl = useRef(null);
 
     useEffect(() => {
-        inputEl.current.focus();
+        if (active) {
+            inputEl.current.focus();
+        } else {
+            inputEl.current.blur();
+        }
     })
 
     const [ guess, setGuess ] = useState('');
@@ -136,13 +144,15 @@ const GuessingPanel = ({ active, answer, acceptableAnswers }) => {
     }
     
     const handleSubmit = (event) => {
-        const trimmedGuess = guess.trim().toLowerCase()
-        if (acceptableAnswers.includes(trimmedGuess)) {
+        event.preventDefault();
+        const trimmedGuess = guess.trim().toLowerCase();
+        if (acceptableAnswers.some(answer => stringSimilarity(answer, trimmedGuess) > 0.8)) {
             alert(`YES! ${answer} was correct`);
         } else {
             alert(`${guess} was not correct`)
+            setGuess('');
+            handleFinish();
         }
-        event.preventDefault();
     }
 
     return (<div style={panelStyle}>
@@ -156,7 +166,8 @@ const GuessingPanel = ({ active, answer, acceptableAnswers }) => {
                 value={ guess }
                 onChange={handleChange}
             />
-            <input type="submit" value="Submit" />
+            <input style={{marginTop: '20px'}} type="submit" value="Submit" />
         </form>
+        <button style={{marginTop: '60px', padding: '40px', background:'transparent', border: 'none'}}onClick={handleFinish}>GO BACK</button>
     </div>);
 };
