@@ -21,7 +21,8 @@ const data = {
         acceptableAnswers: ['teddy sherringham', 
             'teddy sheringham', 
             'teddy sherringam', 
-            'teddy sheringam']
+            'teddy sheringam',
+            'sherringham']
     },
     2: {
         career: [
@@ -33,7 +34,7 @@ const data = {
             "2021–	Birmingham City	41	(7)"
         ],
         answer: "Troy Deeney",
-        acceptableAnswers: ['troy deeney', 'troy deeny', 'troy deenie', 'troy deny']
+        acceptableAnswers: ['troy deeney', 'troy deeny', 'troy deenie', 'troy deny', 'deeney', 'deeny']
     },
     3: {
         career: [
@@ -48,7 +49,7 @@ const data = {
            "2018–	Norwich City	160	(0)",
         ],
         answer: "Tim Krul",
-        acceptableAnswers: ["tim krul", "tim krule", "tim krool", "timothy krul", "tim crool", "tim crul", "tim crule", "tim cruel", 'tim kruel']
+        acceptableAnswers: ["tim krul", "tim krule", "tim krool", "timothy krul", "tim crool", "tim crul", "tim crule", "tim cruel", 'tim kruel', 'krul']
     },
     4: {
         career: [
@@ -60,7 +61,7 @@ const data = {
             "2019–	Brighton & Hove Albion	113	(25)",
         ],
         answer: 'Leandro Trossard',
-        acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd']
+        acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd', 'trossard', 'trosard']
     }
 };
 
