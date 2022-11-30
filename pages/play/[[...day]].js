@@ -41,18 +41,19 @@ const data = {
 
     3: {
         career: [
-           "2006–2017	Newcastle United	160	(0)",
-           "2007–2008	→ Falkirk (loan)	22	(0)",
-           "2008–2009	→ Carlisle United (loan)	9	(0)",
-           "2016–2017	→ Ajax (loan)	0	(0)",
-           "2016–2017	→ Jong Ajax (loan)	6	(0)",
-           "2017	→ AZ (loan)	16	(0)",
-           "2017	→ Brighton & Hove Albion (loan)	0	(0)",
-           "2017–2018	Brighton & Hove Albion	0	(0)",
-           "2018–	Norwich City	160	(0)",
+            "2002–2004	Wimbledon	58	(6)",
+            "2004–2007	West Ham United	120	(11)",
+            "2007–2011	Aston Villa	102	(1)",
+            "2011–2012	Bolton Wanderers	37	(3)",
+            "2012–2013	Ipswich Town	10	(0)",
+            "2013–2014	Vancouver Whitecaps FC	44	(1)",
+            "2014	Chivas USA	9	(0)",
+            "2015–2016	Montreal Impact	31	(0)",
+            "2017	Start	2	(0)",
+            "2018	Milton Keynes Dons	0	(0)",
         ],
-        answer: "Tim Krul",
-        acceptableAnswers: ["tim krul", "tim krule", "tim krool", "timothy krul", "tim crool", "tim crul", "tim crule", "tim cruel", 'tim kruel', 'krul']
+        answer: "Nigel Reo-Coker",
+        acceptableAnswers: ['nigel reo coker', 'nigel reo-coker', 'reo coker', 'reo-coker']
     },
     4: {
         career: [
