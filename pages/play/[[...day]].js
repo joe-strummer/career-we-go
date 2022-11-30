@@ -38,6 +38,7 @@ const data = {
         answer: "Zé Roberto",
         acceptableAnswers: ['ze roberto', 'zé roberto', 'roberto']
     },
+
     3: {
         career: [
            "2006–2017	Newcastle United	160	(0)",
@@ -64,7 +65,22 @@ const data = {
         ],
         answer: 'Leandro Trossard',
         acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd', 'trossard', 'trosard']
-    }
+    },
+    
+    30: {
+        career: [ 
+            "1995–1998	Carlisle United	42	(10)",
+            "1998–1999	Crystal Palace	26	(10)",
+            "1999–2006	Blackburn Rovers	153	(44)",
+            "2003	→ Coventry City (loan)	9	(2)",
+            "2006	Bolton Wanderers	6	(0)",
+            "2009	Wrexham	3	(1)",
+            "2009–2010	Leigh Genesis	30	(10)",
+            "2010–2014	Chorley	36	(4)",
+        ],
+        answer: "Matt Jansen",
+        acceptableAnswers: ['matt jansen', 'matt janson', 'janson', 'jansen']
+    },
 };
 
 export default function Play() {
