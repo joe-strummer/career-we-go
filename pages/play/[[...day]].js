@@ -288,7 +288,7 @@ https://www.careerwego.com`
             }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
             <a style={{color: 'rgb(27,155,240'}} class="twitter-share-button"
-            href={`https://twitter.com/intent/tweet?text=I+guessed+today's+@CareerWeGo+mystery+player+in+${count > 1 ? count : 1}+${count > 1 ? 'seconds' : 'second'}.+Can+you+beat+me?+https://www.careerwego.com`} data-text={tweet} data-url="https://www.careerwego.com">
+            href={`https://twitter.com/intent/tweet?text=I+guessed+today's+@CareerWeGoPod+mystery+player+in+${count > 1 ? count : 1}+${count > 1 ? 'seconds' : 'second'}.+Can+you+beat+me?+https://www.careerwego.com`} data-text={tweet} data-url="https://www.careerwego.com">
             Tweet your results</a>
             </p>
             <p style={{
