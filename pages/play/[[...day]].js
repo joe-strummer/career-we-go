@@ -259,6 +259,10 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         }
     }
 
+    const tweet = `I guessed today's @CareerWeGo mystery player in ${count} seconds.
+Can you beat me?
+https://www.careerwego.com`
+
     return (<div style={panelStyle}>    
         <div style={{
             display: isCorrect ? 'block' : 'none'
@@ -276,12 +280,17 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
             <p style={{
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
-                const results = `I guessed today's Career We Go player in ${count} seconds.
+                const results = `I guessed today's Career We Go player in ${count > 1 ? `${count} seconds` : '1 second'}.
 Can you beat me?
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
-            }}>{ isCopied ? 'Copied!' : '>> Copy your results to clipboard <<' }</a></p>
+            }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
+            <p style={{marginTop: 48}}>
+            <a style={{color: 'rgb(27,155,240'}} class="twitter-share-button"
+            href={`https://twitter.com/intent/tweet?text=I+guessed+today's+@CareerWeGo+mystery+player+in+${count > 1 ? count : 1}+${count > 1 ? 'seconds' : 'second'}.+Can+you+beat+me?+https://www.careerwego.com`} data-text={tweet} data-url="https://www.careerwego.com">
+            Tweet your results</a>
+            </p>
             <p style={{
                 marginTop: 48,
                 fontWeight: 200,
