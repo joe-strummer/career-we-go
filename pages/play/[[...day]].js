@@ -270,7 +270,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
             display: isCorrect ? 'block' : 'none'
         }}>
             <p>
-                {answer} is correct!
+                That's correct!
             </p>
             <p>
                 It took you {count} seconds.
