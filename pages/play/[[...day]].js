@@ -173,7 +173,7 @@ export default function Play() {
                     </div>
                     { !correct && (<button className={styles.guessButton} onClick={() => { 
                         setGuessMode(true);
-                    }}>GUESS</button>)}
+                    }}>ANSWER</button>)}
                 </div>
                 <GuessingPanel 
                         handleFinish={(message) => { 
