@@ -197,13 +197,6 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
 
     const panelStyle = {
         display: active ? 'block' : 'none',
-        position: 'absolute',
-        height: '100vh',
-        width: '100vw',
-        top: 0,
-        left: 0,
-        background: 'rgba(0,0,0,0.7)',
-        padding: '20px',
     };
 
     const inputStyle = {
@@ -269,35 +262,33 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     return (<div style={panelStyle}>    
         <div style={{
             display: isCorrect ? 'block' : 'none'
-        }}>
+        }} className={styles.panel}>
             <p>
                 That's correct!
             </p>
-            <p>
+            <p style={{ fontWeight: 200}}>
                 It took you {count} seconds.
             </p>
-            <p>
+            <p style={{ fontWeight: 200}}>
                 Come back tomorrow for another.
             </p>
 
             <p style={{
-                color: 'black',
-                marginTop: 48,
-                cursor: 'pointer'
-            }}><a style={{padding: 12}} onClick={()=>{
+                marginTop: 48
+            }}><a className='share' style={{padding: 12}} onClick={()=>{
                 const results = `I guessed today's Career We Go player in ${count} seconds.
-                Can you beat me?
-                https://www.careerwego.com`
+Can you beat me?
+https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
-            }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
+            }}>{ isCopied ? 'Copied!' : '>> Copy your results to clipboard <<' }</a></p>
             <p style={{
-                color: 'black',
                 marginTop: 48,
-                cursor: 'pointer'
-            }}><a style={{padding: 12}} onClick={() => { handleFinish('correct')}}>See his career</a></p>
+                fontWeight: 200,
+                fontStyle: 'italic',
+            }}><a style={{padding: 12, color: 'black'}} onClick={() => { handleFinish('correct')}}>See his career</a></p>
         </div>
-        <div style={{
+        <div className={styles.panel} style={{
             display: isCorrect ? 'none' : 'block'
         }}>
             <form onSubmit={handleSubmit}> 

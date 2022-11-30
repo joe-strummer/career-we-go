@@ -125,3 +125,24 @@
   margin: 8px 0;
   text-align: left;
 }
+
+.panel {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+}
+
+.panel p {
+  color: rgb(74, 211, 74);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.panel a {
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
