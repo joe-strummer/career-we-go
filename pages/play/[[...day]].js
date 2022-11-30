@@ -66,7 +66,7 @@ const data = {
         answer: 'Leandro Trossard',
         acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd', 'trossard', 'trosard']
     },
-    
+
     30: {
         career: [ 
             "1995–1998	Carlisle United	42	(10)",
@@ -88,7 +88,7 @@ export default function Play() {
     const dayOverride = router.query.day
 
     const today = new Date();
-    const day = dayOverride || today.getDate();
+    const day = dayOverride || [today.getDate()];
 
     if (!day) {
         return <>No data!</>
