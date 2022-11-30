@@ -240,6 +240,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const [ guess, setGuess ] = useState('');
     const [ showWrong, setShowWrong ] = useState(false);
     const [ isCorrect, setIsCorrect ] = useState(false);
+    const [ isCopied, setIsCopied ] = useState(false)
 
     const handleChange = (event) => {
         setGuess(event.target.value);
@@ -278,10 +279,23 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
             <p>
                 Come back tomorrow for another.
             </p>
+
             <p style={{
                 color: 'black',
-                marginTop: 48
-            }}><a onClick={() => { handleFinish('correct')}}>See his career</a></p>
+                marginTop: 48,
+                cursor: 'pointer'
+            }}><a style={{padding: 12}} onClick={()=>{
+                const results = `I guessed today's Career We Go player in ${count} seconds.
+                Can you beat me?
+                https://www.careerwego.com`
+                navigator.clipboard.writeText(results);
+                setIsCopied(true);
+            }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
+            <p style={{
+                color: 'black',
+                marginTop: 48,
+                cursor: 'pointer'
+            }}><a style={{padding: 12}} onClick={() => { handleFinish('correct')}}>See his career</a></p>
         </div>
         <div style={{
             display: isCorrect ? 'none' : 'block'
