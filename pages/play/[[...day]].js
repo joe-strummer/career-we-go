@@ -7,34 +7,36 @@ import { useState, useEffect, useRef } from 'react';
 
 const data = {
     1: {
-        career: [ "1983–1991	Millwall	220	(93)",
-            "1985	→ Aldershot (loan)	5	(0)",
-            "1985	→ Djurgårdens IF (loan)	21	(13)",
-            "1991–1992	Nottingham Forest	42	(14)",
-            "1992–1997	Tottenham Hotspur	166	(75)",
-            "1997–2001	Manchester United	104	(31)",
-            "2001–2003	Tottenham Hotspur	70	(22)",
-            "2003–2004	Portsmouth	32	(9)",
-            "2004–2007	West Ham United	76	(28)",
-            "2007–2008	Colchester United	19	(3)"],
-        answer: "Teddy Sherringham",
-        acceptableAnswers: ['teddy sherringham', 
-            'teddy sheringham', 
-            'teddy sherringam', 
-            'teddy sheringam',
-            'sherringham']
+        career: [ 
+            "1995–1998	Carlisle United	42	(10)",
+            "1998–1999	Crystal Palace	26	(10)",
+            "1999–2006	Blackburn Rovers	153	(44)",
+            "2003	→ Coventry City (loan)	9	(2)",
+            "2006	Bolton Wanderers	6	(0)",
+            "2009	Wrexham	3	(1)",
+            "2009–2010	Leigh Genesis	30	(10)",
+            "2010–2014	Chorley	36	(4)",
+        ],
+        answer: "Matt Jansen",
+        acceptableAnswers: ['matt jansen', 'matt janson', 'janson', 'jansen']
     },
     2: {
         career: [
-            "2004–2006	Chelmsley Town reserves	3	(0)",
-            "2004–2006	Chelmsley Town	56	(23)",
-            "2006–2010	Walsall	123	(27)",
-            "2006–2007	→ Halesowen Town (loan)	10	(8)",
-            "2010–2021	Watford	389	(131)",
-            "2021–	Birmingham City	41	(7)"
+            "1994–1996	Portuguesa	61	(1)",
+            "1997	Real Madrid	15	(0)",
+            "1998	Flamengo	24	(0)",
+            "1998–2002	Bayer Leverkusen	113	(17)",
+            "2002–2006	Bayern Munich	110	(5)",
+            "2006–2009	Club Nacional de Football	0	(0)",
+            "2006–2007	→ Santos (loan)	13	(2)",
+            "2007–2009	→ Bayern Munich (loan)	59	(9)",
+            "2009–2011	Hamburger SV	54	(7)",
+            "2011–2012	Al-Gharafa	14	(1)",
+            "2012–2014	Grêmio	82	(6)",
+            "2015–2017	Palmeiras	68	(3)",
         ],
-        answer: "Troy Deeney",
-        acceptableAnswers: ['troy deeney', 'troy deeny', 'troy deenie', 'troy deny', 'deeney', 'deeny']
+        answer: "Zé Roberto",
+        acceptableAnswers: ['ze roberto', 'zé roberto', 'roberto']
     },
     3: {
         career: [
@@ -67,10 +69,13 @@ const data = {
 
 export default function Play() {
     const router = useRouter()
-    const { day } = router.query
+    const dayOverride = router.query.day
+
+    const today = new Date();
+    const day = dayOverride || today.getDate();
 
     if (!day) {
-        return <></>
+        return <>No data!</>
     }
 
     const careerData = data[day[0]]
@@ -85,7 +90,7 @@ export default function Play() {
 
     const { career, answer, acceptableAnswers } = careerData;
 
-    const TIME = 2000;
+    const TIME = 3.5;
     
     const baseStyle = {
         transition: 'opacity 800ms'
@@ -101,20 +106,22 @@ export default function Play() {
         opacity: 1
     }
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(-3);
+    const [correct, setCorrect] = useState(false)
 
     const [guessMode, setGuessMode] = useState(false);
 
     useEffect(() => {
-        const interval = setInterval(() => { 
-            if (count >= career.length - 1) {
-                return clearInterval(interval);
-            }
+        const intervalId = setInterval(() => { 
+            // if (count >= career.length * TIME - 1) {
+            //     return clearInterval(intervalId);
+            // }
+            if (correct) return clearInterval(intervalId)
             if(!guessMode) {
                 setCount(count + 1);
             }
-        }, TIME);
-        return () => clearInterval(interval);
+        }, 1000);
+        return () => clearInterval(intervalId);
     });
 
     return (
@@ -129,48 +136,47 @@ export default function Play() {
                 <div style={{
                     filter: guessMode ? 'blur(5px)' : 'none'
                 }}>
-                    <p className={styles.subheader}>
+                    <p className={styles.headerSmall}>
                         CAREER WE GO
                     </p>
-                    <p className={styles.body}>
-                        The career of today's Career We Go player will appear here.
-                    </p>
 
+                    <p className={correct ? styles.timer : styles.timerAnimation}>{
+                        !guessMode && (count < 0 ? 'GET READY...' : count)
+                    }</p>
 
                     <div className={styles.career}>
                         {
                             career.map((team, i) => {
-                                const style = count < i ? hiddenStyle : shownStyle;
+                                const n = count / TIME;
+                                const style = n < i && !correct ? hiddenStyle : shownStyle;
                                 return (<p key={i} style={style}>
                                     {team}
                                 </p>);
                             })
                         }
                     </div>
-                    <button style={{
-                        padding: '20px 40px',
-                        opacity: 0.7,
-                        background: 'red',
-                        color: 'white',
-                        fontSize: '18px',
-                        cursor: 'pointer'
-                    }} onClick={() => { 
+                    { !correct && (<button className={styles.guessButton} onClick={() => { 
                         setGuessMode(true);
-                        
-                    }}>GUESS</button>
+                    }}>GUESS</button>)}
                 </div>
                 <GuessingPanel 
-                        handleFinish={() => setGuessMode(false)} 
+                        handleFinish={(message) => { 
+                            setGuessMode(false)
+                            if (message === "correct") {
+                                setCorrect(true);
+                            }
+                        }} 
                         active={guessMode} 
                         answer={answer} 
                         acceptableAnswers={acceptableAnswers}
-                        day={day[0]} />
+                        count={count}
+                         />
             </div>
         </div>
     )
 }
 
-const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, day }) => {
+const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count }) => {
     const GUESS_TIME = 200;
 
     const panelStyle = {
@@ -204,7 +210,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, day })
                 setTimer(timer - 1);
             }, 
             100);
-            if (timer <= 0) handleFinish()
+            if (timer <= 0 && !isCorrect) handleFinish()
         } else {
             inputEl.current.blur();
             setGuess('');
@@ -251,16 +257,19 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, day })
                 {answer} is correct!
             </p>
             <p>
-                TODO: Add stats and ability to share here.
+                It took you {count} seconds.
             </p>
             <p>
-                <a style={{color: 'blue'}} href={`/play/${Number(day)+ 1}`}>Try the next one</a>
+                Come back tomorrow for another.
             </p>
+            <p style={{
+                color: 'black',
+                marginTop: 48
+            }}><a onClick={() => { handleFinish('correct')}}>See his career</a></p>
         </div>
         <div style={{
             display: isCorrect ? 'none' : 'block'
         }}>
-            GUESSING TIME!
             <form onSubmit={handleSubmit}> 
                 <div style={{
                     opacity: showWrong ? 0 : 1

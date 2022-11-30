@@ -23,15 +23,12 @@ export default function Home() {
             </p>
             <div className={styles.ctas}>
               <p className={styles.ctaplay}>
-                <Link href='play/1'>PLAY</Link>
-              </p>
-              <p className={styles.ctalearn}>
-                LEARN
+                <Link style={{ padding: 24 }} href='play'>PLAY</Link>
               </p>
             </div>
           </header>
         </div>
-        v0.5
+        v0.6
     </div>
   )
 }
