@@ -164,6 +164,14 @@ export default function Play() {
                         !guessMode && (count < 0 ? 'GET READY...' : count)
                     }</p>
 
+                    {
+                        correct && (
+                            <p style ={{margin:4}}>
+                                {answer}
+                            </p>
+                        )
+                    }
+
                     <div className={styles.career}>
                         {
                             career.map((team, i) => {
@@ -267,7 +275,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         } else {
             setShowWrong(true);
             setIncorrectGuesses(incorrectGuesses+1);
-            setTimeout(closeDialog, 1500);
+            setTimeout(closeDialog, 1000);
         }
     }
 
