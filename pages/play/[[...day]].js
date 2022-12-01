@@ -267,9 +267,13 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         }
     }
 
-    const tweet = `I guessed today's @CareerWeGo mystery player in ${count} seconds.
-Can you beat me?
-https://www.careerwego.com`
+    const xEmoji = '%E2%9D%8C';
+    const timeEmoji = '%E2%8F%B3';
+    const newLine = '%0A'
+    const tickEmoji = '%E2%9C%85';
+
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
+
 
     return (<div style={panelStyle}>    
         <div style={{
@@ -279,7 +283,7 @@ https://www.careerwego.com`
                 That's correct!
             </p>
             <p style={{ fontWeight: 200}}>
-                It took you {count > 1 ? `${count} seconds` : '1 second'}.
+                It took you {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempts.
             </p>
             <p style={{ fontWeight: 200}}>
                 Come back tomorrow for another.
@@ -296,7 +300,7 @@ https://www.careerwego.com`
             }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
             <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
-            href={`https://twitter.com/intent/tweet?text=I+guessed+today's+@CareerWeGoPod+mystery+player+in+${count > 1 ? count : 1}+${count > 1 ? 'seconds' : 'second'}.+Can+you+beat+me?+https://www.careerwego.com`} data-text={tweet} data-url="https://www.careerwego.com">
+            href={`https://twitter.com/intent/tweet?text=${tweetText}`} data-text={tweetText} data-url="https://www.careerwego.com">
             Tweet your results</a>
             </p>
             <p style={{
