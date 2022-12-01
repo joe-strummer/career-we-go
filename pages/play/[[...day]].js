@@ -288,7 +288,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         } else {
             setShowWrong(true);
             setIncorrectGuesses(incorrectGuesses+1);
-            setTimeout(closeDialog, 1000);
+            setTimeout(closeDialog, 850);
         }
     }
 
@@ -297,46 +297,46 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const newLine = '%0A'
     const tickEmoji = '%E2%9C%85';
 
-    const timeEmojiUTF = '&#9203;';
-    const xEmojiUTF = '&#10060;';
-    const tickEmojiUTF = '&#9989;';
+    const timeEmojiUTF = '⏳';
+    const xEmojiUTF = '❌';
+    const tickEmojiUTF = '✅';
 
     const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
-
 
     return (<div style={panelStyle}>    
         <div style={{
             display: isCorrect ? 'block' : 'none'
         }} className={styles.panel}>
             <p>
-                That's correct!
+                ✅ That's correct!
             </p>
-            <p style={{ fontWeight: 200}}>
-                It took you {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
+            <p style={{ fontWeight: 400}}>
+                It took you ⏳ {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
             </p>
-            <p style={{ fontWeight: 200}}>
+            <p style={{ fontSize: 18, fontWeight: 200}}>
                 Come back tomorrow for another.
             </p>
 
             <p style={{
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
-                const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmoji}
-${timeEmoji}${timeEmoji}${count > 0 ? count : 1}s
+                const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmojiUTF}
+${timeEmojiUTF}${count > 0 ? count : 1}s
+
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
-            }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
+            }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
             <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
             href={`https://twitter.com/intent/tweet?text=${tweetText}`} data-text={tweetText} data-url="https://www.careerwego.com">
-            Tweet your results</a>
+            🐦 Tweet your results</a>
             </p>
             <p style={{
                 marginTop: 48,
                 fontWeight: 200,
                 fontStyle: 'italic',
-            }}><a style={{padding: 12, color: 'black'}} onClick={() => { handleFinish('correct')}}>See his career</a></p>
+            }}><a style={{padding: 12, color: 'rgba(255,255,255,0.5)'}} onClick={() => { handleFinish('correct')}}>← See his career</a></p>
         </div>
         <div className={styles.panel} style={{
             display: isCorrect ? 'none' : 'block'
@@ -365,9 +365,11 @@ https://www.careerwego.com`
                     marginTop: '20px',
                     color: 'red',
                     transition: 'opacity 100ms',
-                    opacity: showWrong ? 1 :0
+                    opacity: showWrong ? 1 :0,
+                    fontSize: 18,
+                    fontWeight: 500
                 }}>
-                    {guess} is wrong!
+                    ❌ {guess} is wrong!
                 </div>
             </form>
             <button style={{cursor: 'pointer', marginTop: '40px', padding: '40px', background:'transparent', border: 'none'}}onClick={closeDialog}>GO BACK</button>

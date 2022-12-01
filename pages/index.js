@@ -8,6 +8,7 @@ export default function Home() {
       <Head>
         <title>Career We Go</title>
         <meta name="description" content="An online game based on the hit podcast 'Career We Go'" />
+        <meta charSet="UTF-8" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
