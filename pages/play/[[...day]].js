@@ -2,8 +2,11 @@ import Head from 'next/head';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import { stringSimilarity } from "string-similarity-js";
-import styles from '../../styles/Home.module.css';
 import { useState, useEffect, useRef } from 'react';
+
+import { recordStreak } from '../../utils/streaks';
+
+import styles from '../../styles/Home.module.css';
 
 const data = {
     1: {
@@ -234,7 +237,8 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const [ guess, setGuess ] = useState('');
     const [ showWrong, setShowWrong ] = useState(false);
     const [ isCorrect, setIsCorrect ] = useState(false);
-    const [ isCopied, setIsCopied ] = useState(false)
+    const [ isCopied, setIsCopied ] = useState(false);
+    const [ incorrectGuesses, setIncorrectGuesses ] = useState(0);
 
     const handleChange = (event) => {
         setGuess(event.target.value);
@@ -250,12 +254,15 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         event.preventDefault();
         const trimmedGuess = guess.trim().toLowerCase();
 
-        acceptableAnswers.forEach(answer => console.log(answer, 'vs', trimmedGuess, Math.floor(stringSimilarity(answer, trimmedGuess) * 100), '% similarity'));
+        acceptableAnswers.forEach(answer => console.log(trimmedGuess, Math.floor(stringSimilarity(answer, trimmedGuess) * 100), '% similarity to answer'));
 
         if (acceptableAnswers.some(answer => stringSimilarity(answer, trimmedGuess) > 0.8)) {
             setIsCorrect(true);
+            // record local storage
+            recordStreak(incorrectGuesses, count);
         } else {
             setShowWrong(true);
+            setIncorrectGuesses(incorrectGuesses+1);
             setTimeout(closeDialog, 1500);
         }
     }
@@ -272,7 +279,7 @@ https://www.careerwego.com`
                 That's correct!
             </p>
             <p style={{ fontWeight: 200}}>
-                It took you {count} seconds.
+                It took you {count > 1 ? `${count} seconds` : '1 second'}.
             </p>
             <p style={{ fontWeight: 200}}>
                 Come back tomorrow for another.
@@ -288,7 +295,7 @@ https://www.careerwego.com`
                 setIsCopied(true);
             }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
-            <a style={{color: 'rgb(27,155,240'}} class="twitter-share-button"
+            <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
             href={`https://twitter.com/intent/tweet?text=I+guessed+today's+@CareerWeGoPod+mystery+player+in+${count > 1 ? count : 1}+${count > 1 ? 'seconds' : 'second'}.+Can+you+beat+me?+https://www.careerwego.com`} data-text={tweet} data-url="https://www.careerwego.com">
             Tweet your results</a>
             </p>
