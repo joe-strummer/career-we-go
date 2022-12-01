@@ -287,7 +287,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
                 That's correct!
             </p>
             <p style={{ fontWeight: 200}}>
-                It took you {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempts.
+                It took you {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
             </p>
             <p style={{ fontWeight: 200}}>
                 Come back tomorrow for another.

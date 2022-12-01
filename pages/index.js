@@ -28,7 +28,7 @@ export default function Home() {
             </div>
           </header>
         </div>
-        <span style={{opacity: 0.3}}>v1.3</span>
+        <span style={{opacity: 0.3}}>v1.4</span>
     </div>
   )
 }
