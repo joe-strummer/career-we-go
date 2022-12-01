@@ -175,7 +175,7 @@ export default function Play() {
                             })
                         }
                     </div>
-                    { !correct && (<button className={styles.guessButton} onClick={() => { 
+                    { !correct && (<button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
                         setGuessMode(true);
                     }}>ANSWER</button>)}
                 </div>
@@ -293,6 +293,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
                 const results = `I guessed today's Career We Go player in ${count > 1 ? `${count} seconds` : '1 second'}.
+It took me ${incorrectGuesses + 1} attempt${incorrectGuesses !== 0 ? 's' : ''}.
 Can you beat me?
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
