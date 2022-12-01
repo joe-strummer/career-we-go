@@ -128,15 +128,15 @@ export default function Play() {
 
     const [count, setCount] = useState(-3);
     const [correct, setCorrect] = useState(false)
-
     const [guessMode, setGuessMode] = useState(false);
+    const [giveUp, setGiveUp] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => { 
             // if (count >= career.length * TIME - 1) {
             //     return clearInterval(intervalId);
             // }
-            if (correct) return clearInterval(intervalId)
+            if (correct || giveUp) return clearInterval(intervalId)
             if(!guessMode) {
                 setCount(count + 1);
             }
@@ -160,12 +160,12 @@ export default function Play() {
                         CAREER WE GO
                     </p>
 
-                    <p className={correct ? styles.timer : styles.timerAnimation}>{
+                    <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
                         !guessMode && (count < 0 ? 'Whose career is this? GET READY...' : count)
                     }</p>
 
                     {
-                        correct && (
+                        (correct || !!giveUp) && (
                             <p style ={{margin:4}}>
                                 {answer}
                             </p>
@@ -176,18 +176,31 @@ export default function Play() {
                         {
                             career.map((team, i) => {
                                 const n = count / TIME;
-                                const style = n < i && !correct ? hiddenStyle : shownStyle;
+                                const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
                                 return (<p key={i} style={style}>
                                     {team}
                                 </p>);
                             })
                         }
                     </div>
-                    { !correct && (<button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
-                        setGuessMode(true);
-                    }}>ANSWER</button>)}
+                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                        <button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
+                            setGuessMode(true);
+                        }}>ANSWER</button>
+                        <a style={{padding: 20, cursor: 'pointer'}} onClick={ () => { 
+                            if (giveUp === false) {
+                                setGiveUp(0)
+                            }
+                            if (giveUp === 0){
+                                setGiveUp(true) 
+                            }
+                        } }>{giveUp === false ? 'Give up' : 'Sure?'}</a>
+                    </div>)}
                     {
                         correct && (<a style={{cursor: 'pointer', padding: 32 }} onClick={() => {setGuessMode(true)}}>Share results</a>)
+                    }
+                    {
+                        !!giveUp && <p>Better luck tomorrow...</p>
                     }
                     
                 </div>
