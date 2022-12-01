@@ -161,7 +161,7 @@ export default function Play() {
                     </p>
 
                     <p className={correct ? styles.timer : styles.timerAnimation}>{
-                        !guessMode && (count < 0 ? 'GET READY...' : count)
+                        !guessMode && (count < 0 ? 'Whose career is this? GET READY...' : count)
                     }</p>
 
                     {
