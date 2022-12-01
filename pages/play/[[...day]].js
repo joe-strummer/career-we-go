@@ -178,6 +178,10 @@ export default function Play() {
                     { !correct && (<button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
                         setGuessMode(true);
                     }}>ANSWER</button>)}
+                    {
+                        correct && (<a style={{cursor: 'pointer', padding: 32 }} onClick={() => {setGuessMode(true)}}>Share results</a>)
+                    }
+                    
                 </div>
                 <GuessingPanel 
                         handleFinish={(message) => { 
