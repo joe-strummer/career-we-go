@@ -297,6 +297,10 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const newLine = '%0A'
     const tickEmoji = '%E2%9C%85';
 
+    const timeEmojiUTF = '&#9203;';
+    const xEmojiUTF = '&#10060;';
+    const tickEmojiUTF = '&#9989;';
+
     const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
 
 
@@ -317,9 +321,8 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
             <p style={{
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
-                const results = `I guessed today's Career We Go player in ${count > 1 ? `${count} seconds` : '1 second'}.
-It took me ${incorrectGuesses + 1} attempt${incorrectGuesses !== 0 ? 's' : ''}.
-Can you beat me?
+                const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmoji}
+${timeEmoji}${timeEmoji}${count > 0 ? count : 1}s
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
