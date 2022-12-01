@@ -128,15 +128,15 @@ export default function Play() {
 
     const [count, setCount] = useState(-3);
     const [correct, setCorrect] = useState(false)
-
     const [guessMode, setGuessMode] = useState(false);
+    const [giveUp, setGiveUp] = useState(false);
 
     useEffect(() => {
         const intervalId = setInterval(() => { 
             // if (count >= career.length * TIME - 1) {
             //     return clearInterval(intervalId);
             // }
-            if (correct) return clearInterval(intervalId)
+            if (correct || giveUp) return clearInterval(intervalId)
             if(!guessMode) {
                 setCount(count + 1);
             }
@@ -160,12 +160,12 @@ export default function Play() {
                         CAREER WE GO
                     </p>
 
-                    <p className={correct ? styles.timer : styles.timerAnimation}>{
+                    <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
                         !guessMode && (count < 0 ? 'Whose career is this? GET READY...' : count)
                     }</p>
 
                     {
-                        correct && (
+                        (correct || !!giveUp) && (
                             <p style ={{margin:4}}>
                                 {answer}
                             </p>
@@ -176,18 +176,31 @@ export default function Play() {
                         {
                             career.map((team, i) => {
                                 const n = count / TIME;
-                                const style = n < i && !correct ? hiddenStyle : shownStyle;
+                                const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
                                 return (<p key={i} style={style}>
                                     {team}
                                 </p>);
                             })
                         }
                     </div>
-                    { !correct && (<button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
-                        setGuessMode(true);
-                    }}>ANSWER</button>)}
+                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                        <button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
+                            setGuessMode(true);
+                        }}>ANSWER</button>
+                        <a style={{padding: 20, cursor: 'pointer'}} onClick={ () => { 
+                            if (giveUp === false) {
+                                setGiveUp(0)
+                            }
+                            if (giveUp === 0){
+                                setGiveUp(true) 
+                            }
+                        } }>{giveUp === false ? 'Give up' : 'Sure?'}</a>
+                    </div>)}
                     {
                         correct && (<a style={{cursor: 'pointer', padding: 32 }} onClick={() => {setGuessMode(true)}}>Share results</a>)
+                    }
+                    {
+                        !!giveUp && <p>Better luck tomorrow...</p>
                     }
                     
                 </div>
@@ -275,7 +288,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         } else {
             setShowWrong(true);
             setIncorrectGuesses(incorrectGuesses+1);
-            setTimeout(closeDialog, 1000);
+            setTimeout(closeDialog, 850);
         }
     }
 
@@ -284,43 +297,46 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const newLine = '%0A'
     const tickEmoji = '%E2%9C%85';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
+    const timeEmojiUTF = '⏳';
+    const xEmojiUTF = '❌';
+    const tickEmojiUTF = '✅';
 
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
 
     return (<div style={panelStyle}>    
         <div style={{
             display: isCorrect ? 'block' : 'none'
         }} className={styles.panel}>
             <p>
-                That's correct!
+                ✅ That's correct!
             </p>
-            <p style={{ fontWeight: 200}}>
-                It took you {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
+            <p style={{ fontWeight: 400}}>
+                It took you ⏳ {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
             </p>
-            <p style={{ fontWeight: 200}}>
+            <p style={{ fontSize: 18, fontWeight: 200}}>
                 Come back tomorrow for another.
             </p>
 
             <p style={{
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
-                const results = `I guessed today's Career We Go player in ${count > 1 ? `${count} seconds` : '1 second'}.
-It took me ${incorrectGuesses + 1} attempt${incorrectGuesses !== 0 ? 's' : ''}.
-Can you beat me?
+                const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmojiUTF}
+${timeEmojiUTF}${count > 0 ? count : 1}s
+
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
-            }}>{ isCopied ? 'Copied!' : 'Copy your results to clipboard' }</a></p>
+            }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
             <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
             href={`https://twitter.com/intent/tweet?text=${tweetText}`} data-text={tweetText} data-url="https://www.careerwego.com">
-            Tweet your results</a>
+            🐦 Tweet your results</a>
             </p>
             <p style={{
                 marginTop: 48,
                 fontWeight: 200,
                 fontStyle: 'italic',
-            }}><a style={{padding: 12, color: 'black'}} onClick={() => { handleFinish('correct')}}>See his career</a></p>
+            }}><a style={{padding: 12, color: 'rgba(255,255,255,0.5)'}} onClick={() => { handleFinish('correct')}}>← See his career</a></p>
         </div>
         <div className={styles.panel} style={{
             display: isCorrect ? 'none' : 'block'
@@ -349,9 +365,11 @@ https://www.careerwego.com`
                     marginTop: '20px',
                     color: 'red',
                     transition: 'opacity 100ms',
-                    opacity: showWrong ? 1 :0
+                    opacity: showWrong ? 1 :0,
+                    fontSize: 18,
+                    fontWeight: 500
                 }}>
-                    {guess} is wrong!
+                    ❌ {guess} is wrong!
                 </div>
             </form>
             <button style={{cursor: 'pointer', marginTop: '40px', padding: '40px', background:'transparent', border: 'none'}}onClick={closeDialog}>GO BACK</button>
