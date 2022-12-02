@@ -50,6 +50,7 @@
 .headerSmall {
   font-family: MontserratBlack, sans-serif;
   font-size: 22px;
+  line-height: 28px;
   letter-spacing: -1px;
   margin: 0;
   padding: 8px;
@@ -63,18 +64,19 @@
   100% { color: rgba(0, 0, 0, 0.4); }
 }
 .timer {
-  margin: 4px;
+  margin: 4px 12px 4px;
   color: black;
+  line-height: 34px;
 }
 
 .timerAnimation {
-  margin: 4px;
+  margin: 4px 12px 4px;
   color: black;
   animation-name: timer;
   animation-duration: 1s;
   animation-iteration-count: infinite;
+  line-height: 34px;
 }
-
 
 
 .guessButton {
@@ -86,7 +88,7 @@
   color: white;
   font-size: 18px;
   cursor: pointer;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .subheader {
@@ -124,6 +126,14 @@
   padding: 8px;
   margin: 8px 0;
   text-align: left;
+}
+
+.whose {
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  width: 100%;
+  font-size: 18px;
 }
 
 .career table {

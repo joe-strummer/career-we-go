@@ -160,14 +160,20 @@ export default function Play() {
                 <div style={{
                     filter: guessMode ? 'blur(5px)' : 'none'
                 }}>
-                    <p className={styles.headerSmall}>
-                        CAREER WE GO
-                    </p>
+                    <div style={{    
+                            filter: 'none',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            marginLeft: 8}}>
+                        <p className={styles.headerSmall}>
+                            CAREER&nbsp;WE&nbsp;GO
+                        </p>
 
-                    <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
-                        !guessMode && (count < 0 ? 'Whose career is this? GET READY...' : count)
-                    }</p>
-
+                        <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
+                            !guessMode && (count < 0 ? 'Get Ready...' : `${count}s⏳`)
+                        }</p>
+                    </div>
+                    {/* Whose career is this? GET READY... */}
                     {
                         (correct || !!giveUp) && (
                             <p style ={{margin:4}}>
@@ -177,6 +183,7 @@ export default function Play() {
                     }
 
                     <div className={styles.career}>
+                        {count < 0 ? (<p className={styles.whose}>Whose career is this?</p>) : '' }
                         <table cellSpacing="0" cellPadding="2">
                             <tbody>
                                 <tr style={{fontWeight: 'bold'}}>
