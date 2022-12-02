@@ -301,7 +301,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const xEmojiUTF = '❌';
     const tickEmojiUTF = '✅';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count > 0 ? count : 1}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
 
     return (<div style={panelStyle}>    
         <div style={{
@@ -311,7 +311,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
                 ✅ That's correct!
             </p>
             <p style={{ fontWeight: 400}}>
-                It took you ⏳ {count > 1 ? `${count} seconds` : '1 second'} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
+                It took you ⏳ {count === 1 ? '1 second' : `${count} seconds`} and {incorrectGuesses + 1} attempt{incorrectGuesses === 0 ? '' : 's'}.
             </p>
             <p style={{ fontSize: 18, fontWeight: 200}}>
                 Come back tomorrow for another.
@@ -321,7 +321,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
                 marginTop: 48
             }}><a className='share' style={{padding: 12}} onClick={()=>{
                 const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmojiUTF}
-${timeEmojiUTF}${count > 0 ? count : 1}s
+${timeEmojiUTF}${count}s
 
 https://www.careerwego.com`
                 navigator.clipboard.writeText(results);
