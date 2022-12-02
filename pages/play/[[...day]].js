@@ -184,10 +184,13 @@ export default function Play() {
                         }
                     </div>
                     { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                        <button disabled={count < 0 ? true : false} className={styles.guessButton} onClick={() => { 
+                        <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
                             setGuessMode(true);
                         }}>ANSWER</button>
-                        <a style={{padding: 20, cursor: 'pointer'}} onClick={ () => { 
+                        <a style={{padding: 20, cursor: 'pointer', opacity: count < 0 ? 0.3 : 1}} onClick={ () => { 
+                            if (count < 0) {
+                                return
+                            }
                             if (giveUp === false) {
                                 setGiveUp(0)
                             }
@@ -276,6 +279,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     };
     
     const handleSubmit = (event) => {
+        inputEl.current.blur();
         event.preventDefault();
         const trimmedGuess = guess.trim().toLowerCase();
 
@@ -343,26 +347,25 @@ https://www.careerwego.com`
         }}>
             <form onSubmit={handleSubmit}> 
                 <div style={{
-                    opacity: showWrong ? 0 : 1
+                    opacity: showWrong ? 0 : 1,
+                    display: showWrong ? 'none' : 'block'
                 }}>
                     <input 
                         ref={inputEl}
-                        autoFocus={true}
                         autoComplete="off" 
                         autoCorrect="off" 
                         spellCheck="false" 
                         style={inputStyle} type="text" 
                         onSubmit={() => { alert('Guessed!')}}
                         value={ guess }
+                        placeholder={'Who is it?'}
                         onChange={handleChange}
                     />
                     <Timer progress={timer} totalTime={GUESS_TIME} />
-                    <input 
-                        style={{marginTop: '20px'}} 
-                        type="submit" value="Submit" />
+                    
                 </div>
                 <div style={{
-                    marginTop: '20px',
+                    marginTop: '80px',
                     color: 'red',
                     transition: 'opacity 100ms',
                     opacity: showWrong ? 1 :0,
@@ -372,7 +375,7 @@ https://www.careerwego.com`
                     ❌ {guess} is wrong!
                 </div>
             </form>
-            <button style={{cursor: 'pointer', marginTop: '40px', padding: '40px', background:'transparent', border: 'none'}}onClick={closeDialog}>GO BACK</button>
+            { showWrong ? '' : (<button style={{cursor: 'pointer', fontSize:18, color: 'rgba(255,255,255,0.5)', marginTop: '40px', padding: '40px', background:'transparent', border: 'none'}}onClick={closeDialog}>GO BACK</button>)}
         </div>
     </div>);
 };
