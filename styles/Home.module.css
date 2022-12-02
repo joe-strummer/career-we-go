@@ -60,10 +60,10 @@
   position: fixed;
   bottom: 0;
   right: 0;
-  padding: 12px;
+  padding: 18px;
   border: none;
   border-top-left-radius: 8px;
-  background-color: var(--mainboldOP);
+  background-color: transparent;
   color: var(--mainbold);
   cursor: pointer;
 }

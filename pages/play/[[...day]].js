@@ -173,7 +173,7 @@ export default function Play() {
                             justifyContent: 'space-between',
                             marginLeft: 8}}>
                         <p className={styles.headerSmall}>
-                            CAREER&nbsp;WE&nbsp;GO
+                            <Link href='/'>CAREER&nbsp;WE&nbsp;GO</Link>
                         </p>
 
                         <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
