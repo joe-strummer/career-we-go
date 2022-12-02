@@ -29,7 +29,7 @@ export default function Home() {
             </div>
           </header>
         </div>
-        <span style={{opacity: 0.3}}>v1.5</span>
+        <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.6</span>
     </div>
   )
 }
