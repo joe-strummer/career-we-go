@@ -180,7 +180,7 @@ export default function Play() {
                         <table cellSpacing="0" cellPadding="2">
                             <tbody>
                                 <tr style={{fontWeight: 'bold'}}>
-                                    <th>Seasons</th>
+                                    <th></th>
                                     <th>Team</th>
                                     <th>App (goals)</th>
                                 </tr>
