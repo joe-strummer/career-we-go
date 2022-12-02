@@ -7,8 +7,8 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Career We Go</title>
+        <meta content="text/html; charset=UTF-8" name="Content-Type" />
         <meta name="description" content="An online game based on the hit podcast 'Career We Go'" />
-        <meta charSet="UTF-8" />
         
         {/* Facebook previews */}
         <meta property="og:type" content="website" />
