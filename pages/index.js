@@ -15,7 +15,7 @@ export default function Home() {
         <meta property="og:url" content="https://www.careerwego.com" />
         <meta property="og:title" content="Career We Go: Online" />
         <meta property="og:description" content="A daily online challenge based on the football trivia podcast Career We Go" />
-        <meta property="og:image" content="https://careerwego.com/card.jpg" />
+        <meta property="og:image" content="https://www.careerwego.com/card.jpeg" />
         
         {/* Twitter previews */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -23,7 +23,7 @@ export default function Home() {
         <meta name="twitter:domain" value="careerwego.com" />
         <meta name="twitter:title" value="Career We Go: Online" />
         <meta name="twitter:description" value="A daily online challenge based on the football trivia podcast Career We Go" />
-        <meta name="twitter:image" content="https://careerwego.com/card.jpg" />
+        <meta name="twitter:image" content="https://www.careerwego.com/card.jpeg" />
         <meta name="twitter:url" value="https://www.careerwego.com" />
 
         <link rel="icon" href="/favicon.ico" />
