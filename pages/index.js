@@ -1,8 +1,30 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const darkModeOn = () => {
+    setDarkMode(true);
+    localStorage.setItem('darkMode', true);
+    document.body.classList.add('dark');
+  };
+
+  const darkModeOff = () => {
+    setDarkMode(false);
+    localStorage.setItem('darkMode', false);
+    document.body.classList.remove('dark');
+  }
+
+  useEffect(() => {
+    const darkLocal = localStorage.getItem('darkMode');
+    if (darkLocal==='true') {
+      darkModeOn();
+    } 
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -46,6 +68,11 @@ export default function Home() {
             </div>
           </header>
         </div>
+        <button 
+          className={styles.darkMode} 
+          onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
+            {darkMode? 'LIGHT' : 'DARK'} MODE
+        </button>
         <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.8</span>
     </div>
   )

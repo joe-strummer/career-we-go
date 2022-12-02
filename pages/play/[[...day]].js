@@ -203,7 +203,7 @@ export default function Play() {
                             </tbody>
                         </table>
                     </div>
-                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: 22}}>
                         <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
                             setGuessMode(true);
                         }}>ANSWER</button>
