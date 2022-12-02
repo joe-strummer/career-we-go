@@ -1,9 +1,28 @@
+body {
+  --bgcolour: #FFDE00; 
+  --maincolour: #009536;
+  --mainaccent: #8CD790;
+  --mainbold: #1A2521;
+  --mainboldOP: #1a25214a;
+  --table: #eee7d6; 
+}
+
+body.dark {
+    --bgcolour: #1A2521;
+    --maincolour: #ffdd00c9;
+    --mainaccent: #8CD790;
+    --mainbold: #eee7d6cc;
+    --mainboldOP: #1A25214a;
+    --table: #1A2521;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  background: rgb(255, 222, 0);
-  color: rgb(2, 156, 59);
+  /* transition: background-color 0.6s, color 0.6s; */
+  background: var(--bgcolour);
+  color: var(--maincolour);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -18,9 +37,7 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+
   body {
   }
 }

@@ -56,22 +56,33 @@
   padding: 8px;
 }
 
+.darkMode {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 18px;
+  border: none;
+  border-top-left-radius: 8px;
+  background-color: transparent;
+  color: var(--mainbold);
+  cursor: pointer;
+}
 
 @keyframes timer {
-  0% { color: rgba(0, 0, 0, 0.4); }
-  20% { color: black; }
-  80% { color: black; }
-  100% { color: rgba(0, 0, 0, 0.4); }
+  0% { color: var(--mainboldOP); }
+  20% { color: var(--mainbold); }
+  80% { color: var(--mainbold); }
+  100% { color: var(--mainboldOP); }
 }
 .timer {
   margin: 4px 12px 4px;
-  color: black;
+  color: var(--mainbold);
   line-height: 34px;
 }
 
 .timerAnimation {
   margin: 4px 12px 4px;
-  color: black;
+  color: var(--mainbold);
   animation-name: timer;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -82,10 +93,10 @@
 .guessButton {
   padding: 20px 40px;
   transition: opacity 0.4s;
-  background: rgb(2, 156, 59);
+  background: var(--maincolour);
   border: none;
-  box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.2);
-  color: white;
+  box-shadow: -3px 3px 8px var(--mainboldOP);
+  color: var(--table);
   font-size: 18px;
   cursor: pointer;
   border-radius: 4px;
@@ -122,9 +133,8 @@
 }
 
 .career {
-  background-color: rgba(255,255,255,0.3);
+  background-color: var(--table);
   padding: 8px;
-  margin: 8px 0;
   text-align: left;
 }
 
@@ -141,6 +151,7 @@
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  color: var(--mainbold);
 }
 
 .career tr:nth-child(2n) {
@@ -153,17 +164,17 @@
   width: 100vw;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.7);
+  background: var(--mainboldOP);
   padding: 20px;
 }
 
 .panel p {
-  color: rgb(74, 211, 74);
+  color: var(--mainaccent);
   font-size: 22px;
   font-weight: bold;
 }
 
 .panel a {
-  color: rgb(255, 255, 255);
+  color: var(--eggshel);
   cursor: pointer;
 }

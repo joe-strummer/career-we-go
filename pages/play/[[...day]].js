@@ -130,6 +130,13 @@ export default function Play() {
         opacity: 1
     }
 
+    useEffect(() => {
+      const darkLocal = localStorage.getItem('darkMode');
+      if (darkLocal==='true') {
+        document.body.classList.add('dark');
+    } 
+    }, []);
+
     const [count, setCount] = useState(-3);
     const [correct, setCorrect] = useState(false)
     const [guessMode, setGuessMode] = useState(false);
@@ -166,7 +173,7 @@ export default function Play() {
                             justifyContent: 'space-between',
                             marginLeft: 8}}>
                         <p className={styles.headerSmall}>
-                            CAREER&nbsp;WE&nbsp;GO
+                            <Link href='/'>CAREER&nbsp;WE&nbsp;GO</Link>
                         </p>
 
                         <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
@@ -203,7 +210,7 @@ export default function Play() {
                             </tbody>
                         </table>
                     </div>
-                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: 22}}>
                         <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
                             setGuessMode(true);
                         }}>ANSWER</button>
@@ -225,7 +232,6 @@ export default function Play() {
                     {
                         !!giveUp && <p>Better luck tomorrow...</p>
                     }
-                    
                 </div>
                 <GuessingPanel 
                         handleFinish={(message) => { 
