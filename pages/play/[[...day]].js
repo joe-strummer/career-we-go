@@ -129,27 +129,14 @@ export default function Play() {
         ...baseStyle,
         opacity: 1
     }
-    const [darkMode, setDarkMode] = useState(false);
 
-    const darkModeOn = () => {
-      setDarkMode(true);
-      localStorage.setItem('darkMode', true);
-      document.body.classList.add('dark');
-    };
-  
-    const darkModeOff = () => {
-      setDarkMode(false);
-      localStorage.setItem('darkMode', false);
-      document.body.classList.remove('dark');
-    }
-  
     useEffect(() => {
       const darkLocal = localStorage.getItem('darkMode');
       if (darkLocal==='true') {
-        darkModeOn();
-      } 
+        document.body.classList.add('dark');
+    } 
     }, []);
-    
+
     const [count, setCount] = useState(-3);
     const [correct, setCorrect] = useState(false)
     const [guessMode, setGuessMode] = useState(false);
@@ -245,11 +232,6 @@ export default function Play() {
                     {
                         !!giveUp && <p>Better luck tomorrow...</p>
                     }
-                <button 
-                    className={styles.darkMode} 
-                    onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
-                        {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
-                </button>
                 </div>
                 <GuessingPanel 
                         handleFinish={(message) => { 
