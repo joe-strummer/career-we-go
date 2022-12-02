@@ -44,14 +44,14 @@ const data = {
 
     3: {
         career: [
-            "2002–2004/	Wimbledon/	58	(6)",
-            "2004–2007/	West Ham United/	120	(11)",
-            "2007–2011/	Aston Villa/102	(1)",
-            "2011–2012/	Bolton Wanderers/	37	(3)",
-            "2012–2013/	Ipswich Town/	10	(0)",
-            "2013–2014/	Vancouver Whitecaps FC/	44	(1)",
+            "2002–04/	Wimbledon/	58	(6)",
+            "2004–07/	West Ham United/	120	(11)",
+            "2007–11/	Aston Villa/102	(1)",
+            "2011–12/	Bolton Wanderers/	37	(3)",
+            "2012–13/	Ipswich Town/	10	(0)",
+            "2013–14/	Vancouver Whitecaps FC/	44	(1)",
             "2014/	Chivas USA/	9	(0)",
-            "2015–2016/	Montreal Impact/	31	(0)",
+            "2015–16/	Montreal Impact/	31	(0)",
             "2017/	Start/	2	(0)",
             "2018/	Milton Keynes Dons/	0	(0)",
         ],
@@ -60,19 +60,56 @@ const data = {
     },
     4: {
         career: [
-            "93–95/	Alavés	/45	(2)",
-            "95–97/	Valencia	/25	(1)",
-            "95–96/	→ Valladolid (loan)	/24	(2)",
-            "97–98/	Mallorca	/33	(1)",
-            "98–03/	Real Madrid	/60	(1)",
-            "02–03/	→ Bolton Wanderers (loan)	/31	(2)",
-            "03–08/	Bolton Wanderers	14/1	(11)",
-            "08–09/	Ipswich Town	/17	(1)",
-            "09–10/	AEK Larnaca/	8	(0)",
+            "1993–95/	Alavés	/45	(2)",
+            "1995–97/	Valencia	/25	(1)",
+            "1995–96/	→ Valladolid (loan)	/24	(2)",
+            "1997–98/	Mallorca	/33	(1)",
+            "1998–03/	Real Madrid	/60	(1)",
+            "2002–03/	→ Bolton Wanderers (loan)	/31	(2)",
+            "2003–08/	Bolton Wanderers	/141	(11)",
+            "2008–09/	Ipswich Town	/17	(1)",
+            "2009–10/	AEK Larnaca/	8	(0)",
 
         ],
         answer: 'Iván Campo',
         acceptableAnswers: ['iván campo', 'ivan campo', 'campo']
+    },
+    5: {
+        career: [
+            "1995–98/	Queens Park Rangers	/58	(3)",
+            "1998–00/	Nottingham Forest	/43	(2)",
+            "2000–05/	Portsmouth	/148	(13)",
+            "2005–06/	Southampton	/37	(5)",
+            "2006–07/	West Bromwich Albion	/29	(1)",
+            "2007–10/	West Ham United	/7	(0)",
+            "2008–09/	→ Birmingham City (loan)	/10	(0)",
+            "2009	/→ Wolverhampton Wanderers (loan)/	3	(0)",
+            "2009–10	/→ Milton Keynes Dons (loan)/	7	(2)",
+            "2010	/Queens Park Rangers/	4	(0)",
+            "2012	/ÍR	/20	(2)",
+            "2013–15/	BÍ|Bolungarvík	/37	(9)",
+        ],
+        answer: 'Nigel Quashie',
+        acceptableAnswers: ['nigel quashie', 'quashie', 'nigel quasie', 'quasie']
+    },
+    6: {
+        career: [
+            "98–99/	Walton & Hersham/	20	(9)",
+            "99–02/	Bristol Rovers	/116	(35)",
+            "02–05/	Wigan Athletic	/134	(59)",
+            "05–07/	West Bromwich Albion/	68	(15)",
+            "07–11/	Watford	/51	(5)",
+            "08–09/	→ Derby County (loan)/	27	(3)",
+            "10/	→ Skoda Xanthi (loan)/	19	(6)",
+            "11	/→ Preston North End (loan)/	18	(2)",
+            "11–13/	Ipswich Town/	17	(0)",
+            "12–13/	→ Scunthorpe United (loan)/	6	(0)",
+            "13/	Crewe Alexandra/	8	(0)",
+            "13/	Southport/	3	(0)",
+            "17–18/	Egerton	/3	(1)",
+        ],
+        answer: 'Nathan Ellington',
+        acceptableAnswers: ['nathan ellington', 'nathan elington', 'ellington', 'elington']
     },
 
     30: {
@@ -194,16 +231,16 @@ export default function Play() {
                         <table cellSpacing="0" cellPadding="2">
                             <tbody>
                                 <tr style={{fontWeight: 'bold'}}>
-                                    <th></th>
-                                    <th>Team</th>
-                                    <th>App (goals)</th>
+                                    <th className={styles.cell}>Years </th>
+                                    <th className={styles.cellTeam}>Team</th>
+                                    <th className={styles.cell}>Apps (goals)</th>
                                 </tr>
                             {
                                 career.map((team, i) => {
                                     const n = count / TIME;
                                     const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
                                     return (<tr key={i} style={style}>
-                                        {team.split('/').map((cell, j) => (<td key={i+'and'+j}>{cell}</td>))}
+                                        {team.split('/').map((cell, j) => (<td className={j===1 ? styles.cellTeam : styles.cell} key={i+'and'+j}>{cell}</td>))}
                                     </tr>);
                                 })
                             }

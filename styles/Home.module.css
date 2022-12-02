@@ -158,6 +158,14 @@
   background-color: rgba(0,0,0,0.1);
 }
 
+.cell {
+  white-space: nowrap;
+}
+
+.cellTeam {
+  padding-left: 4px;
+}
+
 .panel {
   position: absolute;
   height: 100vh;
