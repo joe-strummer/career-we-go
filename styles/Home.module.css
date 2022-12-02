@@ -80,7 +80,7 @@
 .guessButton {
   padding: 20px 40px;
   transition: opacity 0.4s;
-  background: red;
+  background: rgb(2, 156, 59);
   border: none;
   box-shadow: -3px 3px 8px rgba(0, 0, 0, 0.2);
   color: white;
