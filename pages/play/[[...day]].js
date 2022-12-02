@@ -325,7 +325,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const xEmojiUTF = '❌';
     const tickEmojiUTF = '✅';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}https://www.careerwego.com${newLine}${newLine}@CareerWeGoPod`; 
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}careerwego.com${newLine}@CareerWeGoPod`; 
 
     return (<div style={panelStyle}>    
         <div style={{
