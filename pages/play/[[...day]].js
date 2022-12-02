@@ -11,32 +11,32 @@ import styles from '../../styles/Home.module.css';
 const data = {
     1: {
         career: [ 
-            "1995–1998	Carlisle United	42	(10)",
-            "1998–1999	Crystal Palace	26	(10)",
-            "1999–2006	Blackburn Rovers	153	(44)",
-            "2003	→ Coventry City (loan)	9	(2)",
-            "2006	Bolton Wanderers	6	(0)",
-            "2009	Wrexham	3	(1)",
-            "2009–2010	Leigh Genesis	30	(10)",
-            "2010–2014	Chorley	36	(4)",
+            "1995–1998/	Carlisle United	/42	(10)",
+            "1998–1999/	Crystal Palace/	26	(10)",
+            "1999–2006/	Blackburn Rovers/	153	(44)",
+            "2003/	→ Coventry City (loan)/	9	(2)",
+            "2006/	Bolton Wanderers/	6	(0)",
+            "2009/	Wrexham/	3	(1)",
+            "2009–2010/	Leigh Genesis/	30	(10)",
+            "2010–2014/	Chorley	/36	(4)",
         ],
         answer: "Matt Jansen",
         acceptableAnswers: ['matt jansen', 'matt janson', 'janson', 'jansen']
     },
     2: {
         career: [
-            "1994–1996	Portuguesa	61	(1)",
-            "1997	Real Madrid	15	(0)",
-            "1998	Flamengo	24	(0)",
-            "1998–2002	Bayer Leverkusen	113	(17)",
-            "2002–2006	Bayern Munich	110	(5)",
-            "2006–2009	Club Nacional de Football	0	(0)",
-            "2006–2007	→ Santos (loan)	13	(2)",
-            "2007–2009	→ Bayern Munich (loan)	59	(9)",
-            "2009–2011	Hamburger SV	54	(7)",
-            "2011–2012	Al-Gharafa	14	(1)",
-            "2012–2014	Grêmio	82	(6)",
-            "2015–2017	Palmeiras	68	(3)",
+            "94–96/	Portuguesa/	61	(1)",
+            "97/	Real Madrid/	15 (0)",
+            "98/	Flamengo/	24	(0)",
+            "98–02/	Bayer Leverkusen/	113	(17)",
+            "02–06/	Bayern Munich/	110	(5)",
+            "06–09/	Club Nacional de Football/	0	(0)",
+            "06–07/	→ Santos (loan)/	13	(2)",
+            "07–09/	→ Bayern Munich (loan)/	59	(9)",
+            "09–11/	Hamburger SV/	54	(7)",
+            "11–12/	Al-Gharafa/	14	(1)",
+            "12–14/	Grêmio/	82	(6)",
+            "15–17/	Palmeiras/	68	(3)",
         ],
         answer: "Zé Roberto",
         acceptableAnswers: ['ze roberto', 'zé roberto', 'roberto']
@@ -44,31 +44,35 @@ const data = {
 
     3: {
         career: [
-            "2002–2004	Wimbledon	58	(6)",
-            "2004–2007	West Ham United	120	(11)",
-            "2007–2011	Aston Villa	102	(1)",
-            "2011–2012	Bolton Wanderers	37	(3)",
-            "2012–2013	Ipswich Town	10	(0)",
-            "2013–2014	Vancouver Whitecaps FC	44	(1)",
-            "2014	Chivas USA	9	(0)",
-            "2015–2016	Montreal Impact	31	(0)",
-            "2017	Start	2	(0)",
-            "2018	Milton Keynes Dons	0	(0)",
+            "2002–2004/	Wimbledon/	58	(6)",
+            "2004–2007/	West Ham United/	120	(11)",
+            "2007–2011/	Aston Villa/102	(1)",
+            "2011–2012/	Bolton Wanderers/	37	(3)",
+            "2012–2013/	Ipswich Town/	10	(0)",
+            "2013–2014/	Vancouver Whitecaps FC/	44	(1)",
+            "2014/	Chivas USA/	9	(0)",
+            "2015–2016/	Montreal Impact/	31	(0)",
+            "2017/	Start/	2	(0)",
+            "2018/	Milton Keynes Dons/	0	(0)",
         ],
         answer: "Nigel Reo-Coker",
         acceptableAnswers: ['nigel reo coker', 'nigel reo-coker', 'reo coker', 'reo-coker']
     },
     4: {
         career: [
-            "2012–2019	Genk	83	(27)",
-            "2012–2013	→ Lommel United (loan)	12	(7)",
-            "2013–2014	→ Westerlo (loan)	17	(3)",
-            "2014–2015	→ Lommel United (loan)	30	(16)",
-            "2015–2016	→ OH Leuven (loan)	30	(8)",
-            "2019–	Brighton & Hove Albion	113	(25)",
+            "93–95/	Alavés	/45	(2)",
+            "95–97/	Valencia	/25	(1)",
+            "95–96/	→ Valladolid (loan)	/24	(2)",
+            "97–98/	Mallorca	/33	(1)",
+            "98–03/	Real Madrid	/60	(1)",
+            "02–03/	→ Bolton Wanderers (loan)	/31	(2)",
+            "03–08/	Bolton Wanderers	14/1	(11)",
+            "08–09/	Ipswich Town	/17	(1)",
+            "09–10/	AEK Larnaca/	8	(0)",
+
         ],
-        answer: 'Leandro Trossard',
-        acceptableAnswers: ['leandro trossard', 'leandro trosard', 'liandro trossard', 'leandero trosserd', 'trossard', 'trosard']
+        answer: 'Iván Campo',
+        acceptableAnswers: ['iván campo', 'ivan campo', 'campo']
     },
 
     30: {
@@ -156,14 +160,20 @@ export default function Play() {
                 <div style={{
                     filter: guessMode ? 'blur(5px)' : 'none'
                 }}>
-                    <p className={styles.headerSmall}>
-                        CAREER WE GO
-                    </p>
+                    <div style={{    
+                            filter: 'none',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            marginLeft: 8}}>
+                        <p className={styles.headerSmall}>
+                            CAREER&nbsp;WE&nbsp;GO
+                        </p>
 
-                    <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
-                        !guessMode && (count < 0 ? 'Whose career is this? GET READY...' : count)
-                    }</p>
-
+                        <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
+                            !guessMode && (count < 0 ? 'Get Ready...' : `${count}s⏳`)
+                        }</p>
+                    </div>
+                    {/* Whose career is this? GET READY... */}
                     {
                         (correct || !!giveUp) && (
                             <p style ={{margin:4}}>
@@ -173,15 +183,25 @@ export default function Play() {
                     }
 
                     <div className={styles.career}>
-                        {
-                            career.map((team, i) => {
-                                const n = count / TIME;
-                                const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
-                                return (<p key={i} style={style}>
-                                    {team}
-                                </p>);
-                            })
-                        }
+                        {count < 0 ? (<p className={styles.whose}>Whose career is this?</p>) : '' }
+                        <table cellSpacing="0" cellPadding="2">
+                            <tbody>
+                                <tr style={{fontWeight: 'bold'}}>
+                                    <th></th>
+                                    <th>Team</th>
+                                    <th>App (goals)</th>
+                                </tr>
+                            {
+                                career.map((team, i) => {
+                                    const n = count / TIME;
+                                    const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
+                                    return (<tr key={i} style={style}>
+                                        {team.split('/').map((cell, j) => (<td key={i+'and'+j}>{cell}</td>))}
+                                    </tr>);
+                                })
+                            }
+                            </tbody>
+                        </table>
                     </div>
                     { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                         <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
