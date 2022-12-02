@@ -73,7 +73,7 @@ export default function Home() {
           onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
             {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
         </button>
-        <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.8</span>
+        <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.9</span>
     </div>
   )
 }
