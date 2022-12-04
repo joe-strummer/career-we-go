@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const darkModeOn = () => {
     setDarkMode(true);
@@ -19,10 +19,11 @@ export default function Home() {
   }
 
   useEffect(() => {
+    document.body.classList.add('dark');
     const darkLocal = localStorage.getItem('darkMode');
-    if (darkLocal==='true') {
-      darkModeOn();
-    } 
+    if (darkLocal==='false') {
+      darkModeOff();
+    }
   }, []);
 
   return (
