@@ -95,7 +95,6 @@
   transition: opacity 0.4s;
   background: var(--maincolour);
   border: none;
-  box-shadow: -3px 3px 8px var(--mainboldOP);
   color: var(--table);
   font-size: 18px;
   cursor: pointer;
