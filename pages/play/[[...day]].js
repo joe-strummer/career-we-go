@@ -351,16 +351,16 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
         }
     }
 
-    const xEmoji = '%E2%9D%8C';
-    const timeEmoji = '%E2%8F%B3';
+    const xEmoji = '❌';//'%E2%9D%8C';
+    const timeEmoji = '⏳';//'%E2%8F%B3';
     const newLine = '%0A'
-    const tickEmoji = '%E2%9C%85';
+    const tickEmoji = '✅';//'%E2%9C%85';
 
     const timeEmojiUTF = '⏳';
     const xEmojiUTF = '❌';
     const tickEmojiUTF = '✅';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}Can%20you%20name%20the%20player%20and%20beat%20my%20time?${newLine}⚽️careerwego.com${newLine}@CareerWeGoPod`;
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}Can%20you%20name%20the%20player%20and%20beat%20my%20time?${newLine}⚽️@CareerWeGoPod`;
 
     return (<div style={panelStyle}>    
         <div style={{
@@ -389,7 +389,7 @@ Can you name the player and beat my time?
             }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
             <p style={{marginTop: 48}}>
             <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
-            href={`https://twitter.com/intent/tweet?text=${tweetText}`} data-text={tweetText} data-url="https://www.careerwego.com">
+            href={`https://twitter.com/intent/tweet?text=${tweetText}&url=https://careerwego.com`} data-text={tweetText} data-url="https://careerwego.com">
             🐦 Tweet your results</a>
             </p>
             <p style={{
