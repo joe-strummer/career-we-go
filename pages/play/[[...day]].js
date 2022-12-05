@@ -9,55 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    1: {
-        career: [ 
-            "1995–1998/	Carlisle United	/42	(10)",
-            "1998–1999/	Crystal Palace/	26	(10)",
-            "1999–2006/	Blackburn Rovers/	153	(44)",
-            "2003/	→ Coventry City (loan)/	9	(2)",
-            "2006/	Bolton Wanderers/	6	(0)",
-            "2009/	Wrexham/	3	(1)",
-            "2009–2010/	Leigh Genesis/	30	(10)",
-            "2010–2014/	Chorley	/36	(4)",
-        ],
-        answer: "Matt Jansen",
-        acceptableAnswers: ['matt jansen', 'matt janson', 'janson', 'jansen']
-    },
-    2: {
-        career: [
-            "94–96/	Portuguesa/	61	(1)",
-            "97/	Real Madrid/	15 (0)",
-            "98/	Flamengo/	24	(0)",
-            "98–02/	Bayer Leverkusen/	113	(17)",
-            "02–06/	Bayern Munich/	110	(5)",
-            "06–09/	Club Nacional de Football/	0	(0)",
-            "06–07/	→ Santos (loan)/	13	(2)",
-            "07–09/	→ Bayern Munich (loan)/	59	(9)",
-            "09–11/	Hamburger SV/	54	(7)",
-            "11–12/	Al-Gharafa/	14	(1)",
-            "12–14/	Grêmio/	82	(6)",
-            "15–17/	Palmeiras/	68	(3)",
-        ],
-        answer: "Zé Roberto",
-        acceptableAnswers: ['ze roberto', 'zé roberto', 'roberto']
-    },
-
-    3: {
-        career: [
-            "2002–04/	Wimbledon/	58	(6)",
-            "2004–07/	West Ham United/	120	(11)",
-            "2007–11/	Aston Villa/102	(1)",
-            "2011–12/	Bolton Wanderers/	37	(3)",
-            "2012–13/	Ipswich Town/	10	(0)",
-            "2013–14/	Vancouver Whitecaps FC/	44	(1)",
-            "2014/	Chivas USA/	9	(0)",
-            "2015–16/	Montreal Impact/	31	(0)",
-            "2017/	Start/	2	(0)",
-            "2018/	Milton Keynes Dons/	0	(0)",
-        ],
-        answer: "Nigel Reo-Coker",
-        acceptableAnswers: ['nigel reo coker', 'nigel reo-coker', 'reo coker', 'reo-coker']
-    },
     4: {
         career: [
             "1993–95/	Alavés	/45	(2)",
@@ -94,38 +45,79 @@ const data = {
     },
     6: {
         career: [
-            "98–99/	Walton & Hersham/	20	(9)",
-            "99–02/	Bristol Rovers	/116	(35)",
-            "02–05/	Wigan Athletic	/134	(59)",
-            "05–07/	West Bromwich Albion/	68	(15)",
-            "07–11/	Watford	/51	(5)",
-            "08–09/	→ Derby County (loan)/	27	(3)",
-            "10/	→ Skoda Xanthi (loan)/	19	(6)",
-            "11	/→ Preston North End (loan)/	18	(2)",
-            "11–13/	Ipswich Town/	17	(0)",
-            "12–13/	→ Scunthorpe United (loan)/	6	(0)",
-            "13/	Crewe Alexandra/	8	(0)",
-            "13/	Southport/	3	(0)",
-            "17–18/	Egerton	/3	(1)",
+            "1998–99/	Walton & Hersham/	20	(9)",
+            "1999–02/	Bristol Rovers	/116	(35)",
+            "2002–05/	Wigan Athletic	/134	(59)",
+            "2005–07/	West Bromwich Albion/	68	(15)",
+            "2007–11/	Watford	/51	(5)",
+            "2008–09/	→ Derby County (loan)/	27	(3)",
+            "2010/	→ Skoda Xanthi (loan)/	19	(6)",
+            "2011	/→ Preston North End (loan)/	18	(2)",
+            "2011–13/	Ipswich Town/	17	(0)",
+            "2012–13/	→ Scunthorpe United (loan)/	6	(0)",
+            "2013/	Crewe Alexandra/	8	(0)",
+            "2013/	Southport/	3	(0)",
+            "2017–18/	Egerton	/3	(1)",
         ],
         answer: 'Nathan Ellington',
         acceptableAnswers: ['nathan ellington', 'nathan elington', 'ellington', 'elington']
     },
-
-    30: {
-        career: [ 
-            "1995–1998	Carlisle United	42	(10)",
-            "1998–1999	Crystal Palace	26	(10)",
-            "1999–2006	Blackburn Rovers	153	(44)",
-            "2003	→ Coventry City (loan)	9	(2)",
-            "2006	Bolton Wanderers	6	(0)",
-            "2009	Wrexham	3	(1)",
-            "2009–2010	Leigh Genesis	30	(10)",
-            "2010–2014	Chorley	36	(4)",
+    7: {
+        career: [
+            "2006–13/	Everton/	131	(18)",
+            "2013–16/	West Bromwich Albion/	55	(6)",
+            "2016–17/	Sunderland/	18	(3)",
+            "2017/	Beijing Enterprises Group/	11	(2)",
         ],
-        answer: "Matt Jansen",
-        acceptableAnswers: ['matt jansen', 'matt janson', 'janson', 'jansen']
+        answer: 'Victor Anichebe',
+        acceptableAnswers: ['victor anichebe', 'anichebe', 'anichibe', 'victor anichibe']
     },
+    8: {
+        career: [
+            "1997–02/	Tranmere Rovers/	127	(25)",
+            "2002–07/	West Bromwich Albion/	123	(23)",
+            "2005–06/	→ Cardiff City (loan)/	44	(12)",
+            "2007–11/	Wigan Athletic/	54	(2)",
+            "2010–11/	→ Cardiff City (loan)/	23	(2)",
+            "2013–15/	Tranmere Rovers/	51	(4)",
+        ],
+        answer: 'Jason Koumas',
+        acceptableAnswers: ['jason koumas', 'koumas', 'jason kumas', 'kumas']
+    },
+    9: {
+        career: [
+            "2002–04/	Huddersfield Town/	68	(22)",
+            "2004–05/	Blackburn Rovers/	42	(8)",
+            "2005–07/	Sunderland/	35	(2)",
+            "2006–07/	→ Derby County (loan)/	17	(3)",
+            "2007–08/	Sheffield United/	39	(8)",
+            "2008/	→ Ipswich Town (loan)/	1	(1)",
+            "2008–10/	Ipswich Town/	63	(18)",
+            "2010/	→ Coventry City (loan)/	10	(2)",
+            "2010–13/	Bristol City/	79	(20)",
+            "2013–15/	Huddersfield Town/	19	(2)",
+            "2014/	→ Oldham Athletic (loan)/	5	(0)",
+            "2014/	→ Bradford City (loan)/	8	(1)",
+            "2014–15/	→ Bradford City (loan)/	32	(6)",
+            "2015–19/	Notts County/	162	(42)",
+            "2019–21/	Harrogate Town/	46	(8)",
+        ],
+        answer: 'Jon Stead',
+        acceptableAnswers: ['jon stead', 'stead', 'john stead']
+    },
+    10: {
+        career: [
+            "1989-92/	Luton Town/	70	(6)",
+            "1992–95/	Derby County/	140	(37)",
+            "1995–98/	Sheffield Wednesday/	108	(13)",
+            "1998–99/	Benfica/	19	(1)",
+            "1999–03/	Everton/	101	(4)",
+            "2003–07/	Fulham/	54	(2)",
+
+        ],
+        answer: 'Mark Pembridge',
+        acceptableAnswers: ['mark pembridge', 'marc pembridge', 'mark pembrige', 'pembrige', 'pembridge']
+    }
 };
 
 export default function Play() {
@@ -169,7 +161,7 @@ export default function Play() {
 
     useEffect(() => {
       const darkLocal = localStorage.getItem('darkMode');
-      if (darkLocal==='true') {
+      if (darkLocal!=='false') {
         document.body.classList.add('dark');
     } 
     }, []);
@@ -368,7 +360,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const xEmojiUTF = '❌';
     const tickEmojiUTF = '✅';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}careerwego.com${newLine}@CareerWeGoPod`; 
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}Can%20you%20name%20the%20player%20and%20beat%20my%20time?${newLine}⚽️careerwego.com${newLine}@CareerWeGoPod`;
 
     return (<div style={panelStyle}>    
         <div style={{
@@ -390,7 +382,8 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
                 const results = `${xEmojiUTF.repeat(incorrectGuesses)}${tickEmojiUTF}
 ${timeEmojiUTF}${count}s
 
-https://www.careerwego.com`
+Can you name the player and beat my time?
+⚽️https://careerwego.com`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
             }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
