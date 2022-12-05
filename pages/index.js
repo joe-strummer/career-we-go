@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
+import Snowfall from 'react-snowfall';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -54,6 +55,12 @@ export default function Home() {
 
         <div className={styles.App}>
           <header className={styles.header}>
+            <Snowfall 
+              color="#eee7d6cc" 
+              radius= {[0.1, 0.5]}
+              speed= {[0.1, 0.5]}
+              wind= {[-0.5, 0]}
+               />
             <p className={styles.logo}>
               CAREER<br />
               WE<br />
