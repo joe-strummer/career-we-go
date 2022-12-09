@@ -84,5 +84,12 @@ const getWinStreak = () => {
 
 }
 
+const dumpLocalStorage = () => {
+    if (typeof window === 'undefined') {
+        return;
+    }
+    return localStorage.getItem('cwg_streaks')
+}
 
-export { recordStreak, getWinStreak }
+
+export { recordStreak, getWinStreak, dumpLocalStorage }
