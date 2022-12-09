@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import Snowfall from 'react-snowfall';
+
+import { getWinStreak } from '../utils/streaks';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -81,6 +83,7 @@ export default function Home() {
           onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
             {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
         </button>
+        <span>Current Win Streak: {getWinStreak()}</span>
         <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.9</span>
     </div>
   )
