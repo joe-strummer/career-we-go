@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
+  const [winStreak, setWinStreak] = useState('...');
 
   const darkModeOn = () => {
     setDarkMode(true);
@@ -27,6 +28,8 @@ export default function Home() {
     if (darkLocal==='false') {
       darkModeOff();
     }
+
+    setWinStreak(getWinStreak());
   }, []);
 
   return (
@@ -83,7 +86,7 @@ export default function Home() {
           onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
             {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
         </button>
-        <span>Current Win Streak: {getWinStreak()}</span>
+        <span>Current Win Streak: {winStreak}</span>
         <span style={{position: 'fixed', bottom:0, fontSize: 12, opacity: 0.3}}>v1.9</span>
     </div>
   )
