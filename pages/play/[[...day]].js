@@ -9,69 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    4: {
-        career: [
-            "1993–95/	Alavés	/45	(2)",
-            "1995–97/	Valencia	/25	(1)",
-            "1995–96/	→ Valladolid (loan)	/24	(2)",
-            "1997–98/	Mallorca	/33	(1)",
-            "1998–03/	Real Madrid	/60	(1)",
-            "2002–03/	→ Bolton Wanderers (loan)	/31	(2)",
-            "2003–08/	Bolton Wanderers	/141	(11)",
-            "2008–09/	Ipswich Town	/17	(1)",
-            "2009–10/	AEK Larnaca/	8	(0)",
-
-        ],
-        answer: 'Iván Campo',
-        acceptableAnswers: ['iván campo', 'ivan campo', 'campo']
-    },
-    5: {
-        career: [
-            "1995–98/	Queens Park Rangers	/58	(3)",
-            "1998–00/	Nottingham Forest	/43	(2)",
-            "2000–05/	Portsmouth	/148	(13)",
-            "2005–06/	Southampton	/37	(5)",
-            "2006–07/	West Bromwich Albion	/29	(1)",
-            "2007–10/	West Ham United	/7	(0)",
-            "2008–09/	→ Birmingham City (loan)	/10	(0)",
-            "2009	/→ Wolverhampton Wanderers (loan)/	3	(0)",
-            "2009–10	/→ Milton Keynes Dons (loan)/	7	(2)",
-            "2010	/Queens Park Rangers/	4	(0)",
-            "2012	/ÍR	/20	(2)",
-            "2013–15/	BÍ|Bolungarvík	/37	(9)",
-        ],
-        answer: 'Nigel Quashie',
-        acceptableAnswers: ['nigel quashie', 'quashie', 'nigel quasie', 'quasie']
-    },
-    6: {
-        career: [
-            "1998–99/	Walton & Hersham/	20	(9)",
-            "1999–02/	Bristol Rovers	/116	(35)",
-            "2002–05/	Wigan Athletic	/134	(59)",
-            "2005–07/	West Bromwich Albion/	68	(15)",
-            "2007–11/	Watford	/51	(5)",
-            "2008–09/	→ Derby County (loan)/	27	(3)",
-            "2010/	→ Skoda Xanthi (loan)/	19	(6)",
-            "2011	/→ Preston North End (loan)/	18	(2)",
-            "2011–13/	Ipswich Town/	17	(0)",
-            "2012–13/	→ Scunthorpe United (loan)/	6	(0)",
-            "2013/	Crewe Alexandra/	8	(0)",
-            "2013/	Southport/	3	(0)",
-            "2017–18/	Egerton	/3	(1)",
-        ],
-        answer: 'Nathan Ellington',
-        acceptableAnswers: ['nathan ellington', 'nathan elington', 'ellington', 'elington']
-    },
-    7: {
-        career: [
-            "2006–13/	Everton/	131	(18)",
-            "2013–16/	West Bromwich Albion/	55	(6)",
-            "2016–17/	Sunderland/	18	(3)",
-            "2017/	Beijing Enterprises Group/	11	(2)",
-        ],
-        answer: 'Victor Anichebe',
-        acceptableAnswers: ['victor anichebe', 'anichebe', 'anichibe', 'victor anichibe']
-    },
     8: {
         career: [
             "1997–02/	Tranmere Rovers/	127	(25)",
@@ -117,6 +54,44 @@ const data = {
         ],
         answer: 'Mark Pembridge',
         acceptableAnswers: ['mark pembridge', 'marc pembridge', 'mark pembrige', 'pembrige', 'pembridge']
+    },
+    11: {
+        career: [
+            "2006–11/	Arsenal/	13	(0)",
+            "2008–09/	→ Portsmouth (loan)/	19	(1)",
+            "2010–11/	→ Juventus (loan)/	10	(0)",
+            "2011–16/	Queens Park Rangers/	87	(2)",
+            "2016–18/	Nottingham Forest/	30	(0)",
+            "2018/	→ Cardiff City (loan)/	4	(1)",
+            "2018–19/	Çaykur Rizespor/	0	(0)",
+            "2019–20/	Cardiff City/	0	(0)",
+        ],
+        answer: 'Armand Traoré',
+        acceptableAnswers: ['armand traoré', 'armand traore', 'traore', 'traoré']
+    },
+    12: {
+        career: [
+            "2003–04/	Wimbledon/	8	(0)",
+            "2004–06/	MK Dons/	26	(1)",
+            "2006/	Fisher Athletic/	1	(0)",
+            "2006/	Lewes/	1	(0)",
+            "2006–08/	Barnet/	78	(15)",
+            "2008–10/	Plymouth Argyle/	6	(0)",
+            "2008/	→ MK Dons (loan)/	9	(1)",
+            "2009/	→ MK Dons (loan)/	18	(3)",
+            "2009–10/	→ MK Dons (loan)/	24	(7)",
+            "2010–14/	Southampton/	74	(9)",
+            "2010–11/	→ Millwall (loan)/	7	(5)",
+            "2011/	→ Blackpool (loan)/	11	(3)",
+            "2011/	→ Queens Park Rangers (loan)/	2	(0)",
+            "2013–14/	→ Crystal Palace (loan)/	20	(3)",
+            "2014–19/	Crystal Palace/	133	(12)",
+            "2019/	→ Huddersfield Town (loan)/	6	(0)",
+            "2019–22/	Pafos/	65	(5)",
+            "2022–/	Anorthosis Famagusta/	0	(0)",
+        ],
+        answer: 'Jason Puncheon',
+        acceptableAnswers: ['jason puncheon', 'puncheon', 'punchen', 'punchon', 'jason punchen', 'jason punchon']
     }
 };
 
