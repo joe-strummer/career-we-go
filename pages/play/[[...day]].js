@@ -169,7 +169,10 @@ export default function Play() {
 
             <div className={styles.App}>
                 <div style={{
-                    filter: guessMode ? 'blur(5px)' : 'none'
+                    filter: guessMode ? 'blur(5px)' : 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: '100vh'
                 }}>
                     <div style={{    
                             filter: 'none',
@@ -194,7 +197,7 @@ export default function Play() {
                     }
 
                     <div className={styles.career}>
-                        {count < 0 ? (<p className={styles.whose}>Whose career is this?</p>) : '' }
+                        {count < 0 ? (<p className={styles.whose}>Whose career is this?<br /> {Math.abs(count)}</p>) : '' }
                         <table cellSpacing="0" cellPadding="2">
                             <tbody>
                                 <tr style={{fontWeight: 'bold'}}>
@@ -214,7 +217,7 @@ export default function Play() {
                             </tbody>
                         </table>
                     </div>
-                    { !giveUp && !correct && (<div style={{display: 'flex', justifyContent: 'space-evenly', marginTop: 22}}>
+                    { !giveUp && !correct && (<div style={{padding: '20px 0', display: 'flex', justifyContent: 'space-evenly'}}>
                         <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
                             setGuessMode(true);
                         }}>ANSWER</button>

@@ -135,6 +135,8 @@
   background-color: var(--table);
   padding: 8px;
   text-align: left;
+  box-shadow: inset 0 -8px 10px #0000002b;
+  overflow: scroll;
 }
 
 .whose {
