@@ -83,9 +83,9 @@
 .timerAnimation {
   margin: 4px 12px 4px;
   color: var(--mainbold);
-  animation-name: timer;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+  /* animation-name: timer; */
+  /* animation-duration: 1s; */
+  /* animation-iteration-count: infinite; */
   line-height: 34px;
 }
 
@@ -141,7 +141,7 @@
 
 .whose {
   position: absolute;
-  top: 30%;
+  top: 15%;
   text-align: center;
   width: 100%;
   font-size: 18px;

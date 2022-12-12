@@ -9,52 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    8: {
-        career: [
-            "1997–02/	Tranmere Rovers/	127	(25)",
-            "2002–07/	West Bromwich Albion/	123	(23)",
-            "2005–06/	→ Cardiff City (loan)/	44	(12)",
-            "2007–11/	Wigan Athletic/	54	(2)",
-            "2010–11/	→ Cardiff City (loan)/	23	(2)",
-            "2013–15/	Tranmere Rovers/	51	(4)",
-        ],
-        answer: 'Jason Koumas',
-        acceptableAnswers: ['jason koumas', 'koumas', 'jason kumas', 'kumas']
-    },
-    9: {
-        career: [
-            "2002–04/	Huddersfield Town/	68	(22)",
-            "2004–05/	Blackburn Rovers/	42	(8)",
-            "2005–07/	Sunderland/	35	(2)",
-            "2006–07/	→ Derby County (loan)/	17	(3)",
-            "2007–08/	Sheffield United/	39	(8)",
-            "2008/	→ Ipswich Town (loan)/	1	(1)",
-            "2008–10/	Ipswich Town/	63	(18)",
-            "2010/	→ Coventry City (loan)/	10	(2)",
-            "2010–13/	Bristol City/	79	(20)",
-            "2013–15/	Huddersfield Town/	19	(2)",
-            "2014/	→ Oldham Athletic (loan)/	5	(0)",
-            "2014/	→ Bradford City (loan)/	8	(1)",
-            "2014–15/	→ Bradford City (loan)/	32	(6)",
-            "2015–19/	Notts County/	162	(42)",
-            "2019–21/	Harrogate Town/	46	(8)",
-        ],
-        answer: 'Jon Stead',
-        acceptableAnswers: ['jon stead', 'stead', 'john stead']
-    },
-    10: {
-        career: [
-            "1989-92/	Luton Town/	70	(6)",
-            "1992–95/	Derby County/	140	(37)",
-            "1995–98/	Sheffield Wednesday/	108	(13)",
-            "1998–99/	Benfica/	19	(1)",
-            "1999–03/	Everton/	101	(4)",
-            "2003–07/	Fulham/	54	(2)",
-
-        ],
-        answer: 'Mark Pembridge',
-        acceptableAnswers: ['mark pembridge', 'marc pembridge', 'mark pembrige', 'pembrige', 'pembridge']
-    },
     11: {
         career: [
             "2006–11/	Arsenal/	13	(0)",
@@ -92,7 +46,63 @@ const data = {
         ],
         answer: 'Jason Puncheon',
         acceptableAnswers: ['jason puncheon', 'puncheon', 'punchen', 'punchon', 'jason punchen', 'jason punchon']
-    }
+    },
+    13: {
+        career: [
+            "2002/	Joe Public/	11	(9)",
+            "2002–04/	W Connection/	31	(30)",
+            "2004–07/	Southampton/	71	(19)",
+            "2004–05/	→ Sheffield Wednesday (loan)/	7	(7)",
+            "2005/	→ Stoke City (loan)/	13	(3)",
+            "2007–10/	Sunderland/	94	(26)",
+            "2010–14/	Stoke City/	88	(13)",
+            "2014–16/	Cardiff City/	64	(17)",
+            "2015/	→ AFC Bournemouth (loan)/	6	(1)",
+            "2016/	→ Al Jazira (loan)/	11	(3)",
+            "2016–17/	Atlanta United/	17	(2)",
+            "2016/	→ Central (loan)/	5	(4)",
+        ],
+        answer: 'Kenwyne Jones',
+        acceptableAnswers: ['kenwyne jones', 'jones', 'kenwyn jones', 'kenwin jones']
+    },
+    14: {
+        career: [
+            "2000–03/	Coventry City/	72	(14)",
+            "2003–05/	Perugia/	26	(4)",
+            "2004–05/	→ Blackburn Rovers (loan)/	11	(1)",
+            "2005–06/	Charlton Athletic/	18	(2)",
+            "2006–08/	Wolverhampton Wanderers/	55	(12)",
+            "2008/	→ Stoke City (loan)/	4	(0)",
+            "2008–11/	Cardiff City/	116	(41)",
+            "2011–13/	Queens Park Rangers/	25	(3)",
+            "2012–13/	→ Sheffield Wednesday (loan)/	14	(1)",
+            "2014/	Muangthong United/	16	(6)",
+            "2015–16/	Júbilo Iwata/	54	(34)",
+            "2017–21/	Hokkaido Consadole Sapporo/	107	(35)",
+        ],
+        answer: 'Jay Bothroyd',
+        acceptableAnswers: ['jay bothroyd', 'bothroyd', 'jay boothroyd', 'boothroyd']
+    },
+    15: {
+        career: [
+            "1997–98/	Enugu Rangers/	6	(2)",
+            "1998–99/	El Mokawloon/	25	(5)",
+            "1999–01/	Ismaily/	42	(30)",
+            "2001–02/	Al-Sadd/	27	(14)",
+            "2002–05/	Lens/	102	(24)",
+            "2005–07/	Rennes/	63	(22)",
+            "2007–11/	Portsmouth/	90	(10)",
+            "2011–13/	Montpellier/	68	(12)",
+            "2013–15/	Sivasspor/	47	(12)",
+            "2016/	Ismaily/	0	(0)",
+            "2016/	Nogoom El Mostakbal/	0	(0)",
+            "2017/	Aswan/	12	(2)",
+            "2017–18/	Sedan/	14	(0)",
+        ],
+        answer: 'John Utaka',
+        acceptableAnswers: ['john utaka', 'utaka']
+    },
+    
 };
 
 export default function Play() {
