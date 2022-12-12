@@ -101,6 +101,13 @@
   border-radius: 4px;
 }
 
+.answerButtonPanel {
+  padding: 20px 0;
+  display: flex; 
+  justify-content: space-evenly;
+  background-color: var(--fadeBG);
+}
+
 .subheader {
   font-size: calc(10px + 1.6vmin);
   line-height: calc(10px + 3vmin);

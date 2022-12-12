@@ -5,6 +5,7 @@ body {
   --mainbold: #1A2521;
   --mainboldOP: #1a2521ad;
   --table: #eee7d6; 
+  --fadeBG: rgba(255,255,255,0.1);
 }
 
 body.dark {
@@ -14,6 +15,7 @@ body.dark {
     --mainbold: #eee7d6cc;
     --mainboldOP: #1A25214a;
     --table: #1A2521;
+    --fadeBG: rgba(0,0,0,0.2);
 }
 
 body {

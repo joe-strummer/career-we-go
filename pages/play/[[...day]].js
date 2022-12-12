@@ -182,8 +182,7 @@ export default function Play() {
                     filter: guessMode ? 'blur(5px)' : 'none',
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '89vh',
-                    background: 'rgba(0,0,0,0.2)'
+                    height: '89vh'
                 }}>
                     <div style={{    
                             filter: 'none',
@@ -228,7 +227,7 @@ export default function Play() {
                             </tbody>
                         </table>
                     </div>
-                    { !giveUp && !correct && (<div style={{padding: '20px 0', display: 'flex', justifyContent: 'space-evenly'}}>
+                    { !giveUp && !correct && (<div className={styles.answerButtonPanel}>
                         <button disabled={count < 0 ? true : false} style={{opacity: count < 0 ? 0.3 : 0.9}} className={styles.guessButton} onClick={() => { 
                             setGuessMode(true);
                         }}>ANSWER</button>
