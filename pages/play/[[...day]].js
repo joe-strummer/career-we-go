@@ -182,7 +182,8 @@ export default function Play() {
                     filter: guessMode ? 'blur(5px)' : 'none',
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100vh'
+                    height: '89vh',
+                    background: 'rgba(0,0,0,0.2)'
                 }}>
                     <div style={{    
                             filter: 'none',

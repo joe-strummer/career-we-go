@@ -16,6 +16,14 @@ body.dark {
     --table: #1A2521;
 }
 
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+html {
+  height: -webkit-fill-available;
+}
+
 html,
 body {
   padding: 0;
