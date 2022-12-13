@@ -86,7 +86,6 @@ export default function Home() {
           onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
             {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
         </button>
-        <span>Current Win Streak: {winStreak}</span>
         <span style={{position: 'fixed', bottom:0, left: 0, fontSize: 12, opacity: 0.3}}>v1.10</span>
     </div>
   )
