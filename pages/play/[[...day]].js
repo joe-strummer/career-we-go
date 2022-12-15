@@ -9,62 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    11: {
-        career: [
-            "2006–11/	Arsenal/	13	(0)",
-            "2008–09/	→ Portsmouth (loan)/	19	(1)",
-            "2010–11/	→ Juventus (loan)/	10	(0)",
-            "2011–16/	Queens Park Rangers/	87	(2)",
-            "2016–18/	Nottingham Forest/	30	(0)",
-            "2018/	→ Cardiff City (loan)/	4	(1)",
-            "2018–19/	Çaykur Rizespor/	0	(0)",
-            "2019–20/	Cardiff City/	0	(0)",
-        ],
-        answer: 'Armand Traoré',
-        acceptableAnswers: ['armand traoré', 'armand traore', 'traore', 'traoré']
-    },
-    12: {
-        career: [
-            "2003–04/	Wimbledon/	8	(0)",
-            "2004–06/	MK Dons/	26	(1)",
-            "2006/	Fisher Athletic/	1	(0)",
-            "2006/	Lewes/	1	(0)",
-            "2006–08/	Barnet/	78	(15)",
-            "2008–10/	Plymouth Argyle/	6	(0)",
-            "2008/	→ MK Dons (loan)/	9	(1)",
-            "2009/	→ MK Dons (loan)/	18	(3)",
-            "2009–10/	→ MK Dons (loan)/	24	(7)",
-            "2010–14/	Southampton/	74	(9)",
-            "2010–11/	→ Millwall (loan)/	7	(5)",
-            "2011/	→ Blackpool (loan)/	11	(3)",
-            "2011/	→ Queens Park Rangers (loan)/	2	(0)",
-            "2013–14/	→ Crystal Palace (loan)/	20	(3)",
-            "2014–19/	Crystal Palace/	133	(12)",
-            "2019/	→ Huddersfield Town (loan)/	6	(0)",
-            "2019–22/	Pafos/	65	(5)",
-            "2022–/	Anorthosis Famagusta/	0	(0)",
-        ],
-        answer: 'Jason Puncheon',
-        acceptableAnswers: ['jason puncheon', 'puncheon', 'punchen', 'punchon', 'jason punchen', 'jason punchon']
-    },
-    13: {
-        career: [
-            "2002/	Joe Public/	11	(9)",
-            "2002–04/	W Connection/	31	(30)",
-            "2004–07/	Southampton/	71	(19)",
-            "2004–05/	→ Sheffield Wednesday (loan)/	7	(7)",
-            "2005/	→ Stoke City (loan)/	13	(3)",
-            "2007–10/	Sunderland/	94	(26)",
-            "2010–14/	Stoke City/	88	(13)",
-            "2014–16/	Cardiff City/	64	(17)",
-            "2015/	→ AFC Bournemouth (loan)/	6	(1)",
-            "2016/	→ Al Jazira (loan)/	11	(3)",
-            "2016–17/	Atlanta United/	17	(2)",
-            "2016/	→ Central (loan)/	5	(4)",
-        ],
-        answer: 'Kenwyne Jones',
-        acceptableAnswers: ['kenwyne jones', 'jones', 'kenwyn jones', 'kenwin jones']
-    },
     14: {
         career: [
             "2000–03/	Coventry City/	72	(14)",
@@ -100,9 +44,86 @@ const data = {
             "2017–18/	Sedan/	14	(0)",
         ],
         answer: 'John Utaka',
-        acceptableAnswers: ['john utaka', 'utaka']
+        acceptableAnswers: ['john utaka', 'utaka', 'utuka', 'john utuka']
     },
-    
+    16: {
+        career: [
+            "1998–2001/	Cannes/	0	(0)",
+            "2001–2003/	Sunderland/	20	(1)",
+            "2003–2006/	Manchester United/	24	(4)",
+            "2005–2006/	→ West Ham United (loan)/	8	(0)",
+            "2006/	→ Nice (loan)/	15	(5)",
+            "2006–2007/	Nice/	30	(7)",
+            "2007–2014/	Bordeaux/	114	(20)",
+            "2010–2011/	→ Nice (loan)/	10	(0)",
+            "2014–2016/	Red Star/	29	(8)",
+        ],
+        answer: 'David Bellion',
+        acceptableAnswers: ['david bellion', 'davide bellion', 'bellion']
+    },
+    17:  {
+        career: [
+            "1992–95/	Milan/	0	(0)",
+            "1993–94/	→ Como (loan)/	6	(0)",
+            "1995–96/	Prato/	30	(0)",
+            "1996–97/	Lazio/	1	(0)",
+            "1997–00/	Castel di Sangro/	46	(0)",
+            "1999–00/	→ Chelsea (loan)/	1	(0)",
+            "2000–09/	Chelsea/	141	(0)",
+            "2009–12/	Tottenham Hotspur/	19	(0)",
+            "2012–14/	LA Galaxy/	21	(0)",
+        ],
+        answer: 'Carlo Cudicini',
+        acceptableAnswers: ['carlo cudicini', 'cudicini', 'cudiccini', 'carlo cudiceni', 'cudiceni']
+    },
+    18: {
+        career: [
+            "1989–99/	Blackburn Rovers/	271	(31)",
+            "1999–04/	Leeds United/	81	(4)",
+            "2004–06/	Leicester City/	20	(1)",
+            "2005–06/	→ Blackpool (loan)/	12	(0)",
+            "2006/	Blackpool/	14	(0)",
+        ],
+        answer: 'Jason Wilcox',
+        acceptableAnswers: ['jason wilcox', 'wilcox', 'willcox', 'jason willcox']
+    },
+    19: {
+        career: [
+            "1996–2000/	Wimbledon/	73	(16)",
+            "1997/	→ Lincoln City (loan)/	6	(1)",
+            "2000–04/	Newcastle United/	22	(7)",
+            "2004–07/	Wolverhampton Wanderers/	94	(31)",
+            "2007–08/	Leicester City/	14	(0)",
+            "2008/	Marbella/	10	(0)",
+            "2008–09/	Norwich City/	12	(1)",
+            "2009–11/	Brentford/	31	(6)",
+            "2012–14/	Tampa Bay Rowdies/	22	(4)",
+        ],
+        answer: 'Carl Cort',
+        acceptableAnswers: ['carl cort', 'cort', 'carl court', 'court', 'karl cort', 'karl court']
+    },
+    20: {
+        career: [
+            "1986–1994/	Norwich City/	173	(22)",
+            "1994–1995/	Newcastle United/	58	(12)",
+            "1995–2000/	Tottenham Hotspur/	106	(13)",
+            "2000–2002/	West Bromwich Albion/	56	(2)",
+        ],
+        answer: 'Ruel Fox',
+        acceptableAnswers: ['ruel fox', 'rule fox', 'fox', 'reul fox', 'rul fox', 'rool fox', 'raul fox']
+    },
+    21: {
+        career: [
+            "1986–96/	Feyenoord/	238	(45)",
+            "1988–89/	→ Den Bosch (loan)/	25	(6)",
+            "1996–97/	Sheffield Wednesday/	42	(3)",
+            "1997–00/	Celtic/	47	(9)",
+            "2000–01/	RBC/	22	(5)",
+            "2001–03/	Sparta Rotterdam/	30	(1)",
+        ],
+        answer: 'Regi Blinker',
+        acceptableAnswers: ['regi blinker', 'reggie blinker', 'blinker', 'redgie blinked', 'reggy blinker']
+    },
 };
 
 export default function Play() {
