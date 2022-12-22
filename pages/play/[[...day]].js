@@ -49,6 +49,45 @@ const data = {
         ],
         answer: 'John Oster',
         acceptableAnswers: ['john oster', 'oster', 'jon oster', 'osster', 'john osster', 'jon osster']
+    },
+    23: {
+        career: [
+            "1996–00/	Liverpool/	59	(5)",
+            "1997–98/	→ Swindon Town (loan)/	10	(0)",
+            "2000–02/	Coventry City/	69	(17)",
+            "2002–06/	Blackburn Rovers/	65	(7)",
+            "2006/	Wigan Athletic/	10	(2)",
+            "2006–07/	Portsmouth/	14	(0)",
+            "2007/	Bolton Wanderers/	8	(0)",
+        ],
+        answer: 'David Thompson',
+        acceptableAnswers: ['david thompson', 'thompson', 'david thomson', 'thomson']
+    },
+    24: {
+        career: [
+            "1993–95/	Welling United/	41	(1)",
+            "1995–96/	Birmingham City/	15	(1)",
+            "1996/	→ Notts County (loan)/	17	(2)",
+            "1996–98/	Notts County/	80	(5)",
+            "1998–03/	Fulham/	172	(7)",
+            "2003–08/	Liverpool/	145	(1)",
+            "2008–09/	Espanyol/	4	(0)",
+            "2009–10/	Portsmouth/	21	(0)",
+        ],
+        answer: 'Steve Finnan',
+        acceptableAnswers: ['steve finnan', 'steven finnan', 'stephen finnan', 'steven finan', 'stephen finan', 'steve finan', 'finnan', 'finan']
+    },
+    25: {
+        career: [
+            "1984–87/	Aston Villa/	111	(2)",
+            "1987–91/	Chelsea/	146	(11)",
+            "1991–97/	Leeds United/	171	(5)",
+            "1997–98/	Torino/	30	(2)",
+            "1998–00/	Derby County/	41	(1)",
+            "2000–01/	Stoke City/	36	(0)",
+        ],
+        answer: 'Tony Dorigo',
+        acceptableAnswers: ['tony dorigo', 'tony dorrigo', 'dorigo', 'dorrigo']
     }
 };
 
