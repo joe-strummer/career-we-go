@@ -9,99 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    14: {
-        career: [
-            "2000–03/	Coventry City/	72	(14)",
-            "2003–05/	Perugia/	26	(4)",
-            "2004–05/	→ Blackburn Rovers (loan)/	11	(1)",
-            "2005–06/	Charlton Athletic/	18	(2)",
-            "2006–08/	Wolverhampton Wanderers/	55	(12)",
-            "2008/	→ Stoke City (loan)/	4	(0)",
-            "2008–11/	Cardiff City/	116	(41)",
-            "2011–13/	Queens Park Rangers/	25	(3)",
-            "2012–13/	→ Sheffield Wednesday (loan)/	14	(1)",
-            "2014/	Muangthong United/	16	(6)",
-            "2015–16/	Júbilo Iwata/	54	(34)",
-            "2017–21/	Hokkaido Consadole Sapporo/	107	(35)",
-        ],
-        answer: 'Jay Bothroyd',
-        acceptableAnswers: ['jay bothroyd', 'bothroyd', 'jay boothroyd', 'boothroyd']
-    },
-    15: {
-        career: [
-            "1997–98/	Enugu Rangers/	6	(2)",
-            "1998–99/	El Mokawloon/	25	(5)",
-            "1999–01/	Ismaily/	42	(30)",
-            "2001–02/	Al-Sadd/	27	(14)",
-            "2002–05/	Lens/	102	(24)",
-            "2005–07/	Rennes/	63	(22)",
-            "2007–11/	Portsmouth/	90	(10)",
-            "2011–13/	Montpellier/	68	(12)",
-            "2013–15/	Sivasspor/	47	(12)",
-            "2016/	Ismaily/	0	(0)",
-            "2016/	Nogoom El Mostakbal/	0	(0)",
-            "2017/	Aswan/	12	(2)",
-            "2017–18/	Sedan/	14	(0)",
-        ],
-        answer: 'John Utaka',
-        acceptableAnswers: ['john utaka', 'utaka', 'utuka', 'john utuka']
-    },
-    16: {
-        career: [
-            "1998–2001/	Cannes/	0	(0)",
-            "2001–2003/	Sunderland/	20	(1)",
-            "2003–2006/	Manchester United/	24	(4)",
-            "2005–2006/	→ West Ham United (loan)/	8	(0)",
-            "2006/	→ Nice (loan)/	15	(5)",
-            "2006–2007/	Nice/	30	(7)",
-            "2007–2014/	Bordeaux/	114	(20)",
-            "2010–2011/	→ Nice (loan)/	10	(0)",
-            "2014–2016/	Red Star/	29	(8)",
-        ],
-        answer: 'David Bellion',
-        acceptableAnswers: ['david bellion', 'davide bellion', 'bellion']
-    },
-    17:  {
-        career: [
-            "1992–95/	Milan/	0	(0)",
-            "1993–94/	→ Como (loan)/	6	(0)",
-            "1995–96/	Prato/	30	(0)",
-            "1996–97/	Lazio/	1	(0)",
-            "1997–00/	Castel di Sangro/	46	(0)",
-            "1999–00/	→ Chelsea (loan)/	1	(0)",
-            "2000–09/	Chelsea/	141	(0)",
-            "2009–12/	Tottenham Hotspur/	19	(0)",
-            "2012–14/	LA Galaxy/	21	(0)",
-        ],
-        answer: 'Carlo Cudicini',
-        acceptableAnswers: ['carlo cudicini', 'cudicini', 'cudiccini', 'carlo cudiceni', 'cudiceni']
-    },
-    18: {
-        career: [
-            "1989–99/	Blackburn Rovers/	271	(31)",
-            "1999–04/	Leeds United/	81	(4)",
-            "2004–06/	Leicester City/	20	(1)",
-            "2005–06/	→ Blackpool (loan)/	12	(0)",
-            "2006/	Blackpool/	14	(0)",
-        ],
-        answer: 'Jason Wilcox',
-        acceptableAnswers: ['jason wilcox', 'wilcox', 'willcox', 'jason willcox']
-    },
-    19: {
-        career: [
-            "1996–2000/	Wimbledon/	73	(16)",
-            "1997/	→ Lincoln City (loan)/	6	(1)",
-            "2000–04/	Newcastle United/	22	(7)",
-            "2004–07/	Wolverhampton Wanderers/	94	(31)",
-            "2007–08/	Leicester City/	14	(0)",
-            "2008/	Marbella/	10	(0)",
-            "2008–09/	Norwich City/	12	(1)",
-            "2009–11/	Brentford/	31	(6)",
-            "2012–14/	Tampa Bay Rowdies/	22	(4)",
-        ],
-        answer: 'Carl Cort',
-        acceptableAnswers: ['carl cort', 'cort', 'carl court', 'court', 'karl cort', 'karl court']
-    },
     20: {
         career: [
             "1986–1994/	Norwich City/	173	(22)",
@@ -124,6 +31,25 @@ const data = {
         answer: 'Regi Blinker',
         acceptableAnswers: ['regi blinker', 'reggie blinker', 'blinker', 'redgie blinked', 'reggy blinker']
     },
+    22: {
+        career: [
+            "1994–97/	Grimsby Town/	24	(3)",
+            "1997–99/	Everton/	40	(1)",
+            "1999–05/	Sunderland/	68	(5)",
+            "2001/	→ Barnsley (loan)/	2	(0)",
+            "2002/	→ Grimsby Town (loan)/	10	(5)",
+            "2003/	→ Grimsby Town (loan)/	7	(1)",
+            "2004–05/	→ Leeds United (loan)/	8	(1)",
+            "2005/	Burnley/	15	(1)",
+            "2005–08/	Reading/	76	(2)",
+            "2008–09/	Crystal Palace/	31	(3)",
+            "2009–12/	Doncaster Rovers/	111	(2)",
+            "2012–13/	Barnet/	28	(2)",
+            "2013–15/	Gateshead/	67	(3)",
+        ],
+        answer: 'John Oster',
+        acceptableAnswers: ['john oster', 'oster', 'jon oster', 'osster', 'john osster', 'jon osster']
+    }
 };
 
 export default function Play() {
