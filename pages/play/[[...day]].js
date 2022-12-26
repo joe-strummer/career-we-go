@@ -88,6 +88,21 @@ const data = {
         ],
         answer: 'Tony Dorigo',
         acceptableAnswers: ['tony dorigo', 'tony dorrigo', 'dorigo', 'dorrigo']
+    },
+    26: {
+        career: [
+            "1995–97/	Hearts of Oak/	21	(19)",
+            "1997–00/	Udinese/	36	(0)",
+            "2000–03/	Parma/	28	(0)",
+            "2002–03/	→ Brescia (loan)/	31	(7)",
+            "2003–05/	Juventus/	48	(3)",
+            "2005–08/	Fenerbahçe/	64	(11)",
+            "2009–10/	Bologna/	2	(0)",
+            "2010–11/	Cesena/	14	(0)",
+            "2012/	Vojvodina/	11	(/1)",
+        ],
+        answer: 'Stephen Appiah',
+        acceptableAnswers: ['stephen appiah', 'steven appiah', 'stephen appia', 'steven appia', 'appiah', 'appia']
     }
 };
 
