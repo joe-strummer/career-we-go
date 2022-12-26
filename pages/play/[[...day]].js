@@ -103,6 +103,21 @@ const data = {
         ],
         answer: 'Stephen Appiah',
         acceptableAnswers: ['stephen appiah', 'steven appiah', 'stephen appia', 'steven appia', 'appiah', 'appia']
+    },
+    27: {
+        career: [
+            "1994–97/	Ajax/	42	(6)",
+            "1997–99/	Bordeaux/	33	(5)",
+            "1999–03/	Málaga/	96	(22)",
+            "2003–06/	Atlético Madrid/	34	(2)",
+            "2005–06/	→ Manchester City (loan)/	41	(3)",
+            "2006–07/	Trabzonspor/	14	(0)",
+            "2007–08/	AZ/	5	(0)",
+            "2008/	FC Seoul/	3	(0)",
+            "2009/	Willem II/	6	(0)",
+        ],
+        answer: 'Kiki Musampa',
+        acceptableAnswers: ['kiki musampa', 'kiki', 'musampa']
     }
 };
 
