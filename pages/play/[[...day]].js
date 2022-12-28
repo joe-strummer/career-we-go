@@ -9,74 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    20: {
-        career: [
-            "1986–1994/	Norwich City/	173	(22)",
-            "1994–1995/	Newcastle United/	58	(12)",
-            "1995–2000/	Tottenham Hotspur/	106	(13)",
-            "2000–2002/	West Bromwich Albion/	56	(2)",
-        ],
-        answer: 'Ruel Fox',
-        acceptableAnswers: ['ruel fox', 'rule fox', 'fox', 'reul fox', 'rul fox', 'rool fox', 'raul fox']
-    },
-    21: {
-        career: [
-            "1986–96/	Feyenoord/	238	(45)",
-            "1988–89/	→ Den Bosch (loan)/	25	(6)",
-            "1996–97/	Sheffield Wednesday/	42	(3)",
-            "1997–00/	Celtic/	47	(9)",
-            "2000–01/	RBC/	22	(5)",
-            "2001–03/	Sparta Rotterdam/	30	(1)",
-        ],
-        answer: 'Regi Blinker',
-        acceptableAnswers: ['regi blinker', 'reggie blinker', 'blinker', 'redgie blinked', 'reggy blinker']
-    },
-    22: {
-        career: [
-            "1994–97/	Grimsby Town/	24	(3)",
-            "1997–99/	Everton/	40	(1)",
-            "1999–05/	Sunderland/	68	(5)",
-            "2001/	→ Barnsley (loan)/	2	(0)",
-            "2002/	→ Grimsby Town (loan)/	10	(5)",
-            "2003/	→ Grimsby Town (loan)/	7	(1)",
-            "2004–05/	→ Leeds United (loan)/	8	(1)",
-            "2005/	Burnley/	15	(1)",
-            "2005–08/	Reading/	76	(2)",
-            "2008–09/	Crystal Palace/	31	(3)",
-            "2009–12/	Doncaster Rovers/	111	(2)",
-            "2012–13/	Barnet/	28	(2)",
-            "2013–15/	Gateshead/	67	(3)",
-        ],
-        answer: 'John Oster',
-        acceptableAnswers: ['john oster', 'oster', 'jon oster', 'osster', 'john osster', 'jon osster']
-    },
-    23: {
-        career: [
-            "1996–00/	Liverpool/	59	(5)",
-            "1997–98/	→ Swindon Town (loan)/	10	(0)",
-            "2000–02/	Coventry City/	69	(17)",
-            "2002–06/	Blackburn Rovers/	65	(7)",
-            "2006/	Wigan Athletic/	10	(2)",
-            "2006–07/	Portsmouth/	14	(0)",
-            "2007/	Bolton Wanderers/	8	(0)",
-        ],
-        answer: 'David Thompson',
-        acceptableAnswers: ['david thompson', 'thompson', 'david thomson', 'thomson']
-    },
-    24: {
-        career: [
-            "1993–95/	Welling United/	41	(1)",
-            "1995–96/	Birmingham City/	15	(1)",
-            "1996/	→ Notts County (loan)/	17	(2)",
-            "1996–98/	Notts County/	80	(5)",
-            "1998–03/	Fulham/	172	(7)",
-            "2003–08/	Liverpool/	145	(1)",
-            "2008–09/	Espanyol/	4	(0)",
-            "2009–10/	Portsmouth/	21	(0)",
-        ],
-        answer: 'Steve Finnan',
-        acceptableAnswers: ['steve finnan', 'steven finnan', 'stephen finnan', 'steven finan', 'stephen finan', 'steve finan', 'finnan', 'finan']
-    },
     25: {
         career: [
             "1984–87/	Aston Villa/	111	(2)",
@@ -118,6 +50,19 @@ const data = {
         ],
         answer: 'Kiki Musampa',
         acceptableAnswers: ['kiki musampa', 'kiki', 'musampa']
+    },
+    28: {
+        career: [
+            "1996–97/	Barcelona B/	32	(10)",
+            "1997–00/	Valencia/	45	(4)",
+            "1998–99/	→ Alavés (loan)/	29	(7)",
+            "2000–05/	Barcelona/	91	(5)",
+            "2005–07/	Monaco/	13	(1)",
+            "2007–08/	Recreativo/	18	(0)",
+            "2009–11/	Girona/	31	(4)",
+        ],
+        answer: 'Gerard López',
+        acceptableAnswers: ['gerard lópez', 'gerard lopez', 'gerard', 'gerrard', 'gerrard lopez', 'lopez', 'lópez']
     }
 };
 
