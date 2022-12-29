@@ -63,6 +63,20 @@ const data = {
         ],
         answer: 'Gerard López',
         acceptableAnswers: ['gerard lópez', 'gerard lopez', 'gerard', 'gerrard', 'gerrard lopez', 'lopez', 'lópez']
+    },
+    29: {
+        career: [
+            "1989–93/	Huddersfield Town/	124	(1)",
+            "1993–98/	Southampton/	114	(2)",
+            "1997–98/	→ Birmingham City (loan)/	5	(0)",
+            "1998–00/	Birmingham City/	67	(0)",
+            "2000–04/	Bolton Wanderers/	120	(0)",
+            "2004–06/	Norwich City/	45	(2)",
+            "2006–07/	Oldham Athletic/	34	(1)",
+            "2009–10/	Mildenhall Town/	2	(0)",
+        ],
+        answer: 'Simon Charlton',
+        acceptableAnswers: ['simon charlton', 'chartlon']
     }
 };
 
