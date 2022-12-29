@@ -9,33 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    25: {
-        career: [
-            "1984–87/	Aston Villa/	111	(2)",
-            "1987–91/	Chelsea/	146	(11)",
-            "1991–97/	Leeds United/	171	(5)",
-            "1997–98/	Torino/	30	(2)",
-            "1998–00/	Derby County/	41	(1)",
-            "2000–01/	Stoke City/	36	(0)",
-        ],
-        answer: 'Tony Dorigo',
-        acceptableAnswers: ['tony dorigo', 'tony dorrigo', 'dorigo', 'dorrigo']
-    },
-    26: {
-        career: [
-            "1995–97/	Hearts of Oak/	21	(19)",
-            "1997–00/	Udinese/	36	(0)",
-            "2000–03/	Parma/	28	(0)",
-            "2002–03/	→ Brescia (loan)/	31	(7)",
-            "2003–05/	Juventus/	48	(3)",
-            "2005–08/	Fenerbahçe/	64	(11)",
-            "2009–10/	Bologna/	2	(0)",
-            "2010–11/	Cesena/	14	(0)",
-            "2012/	Vojvodina/	11	(/1)",
-        ],
-        answer: 'Stephen Appiah',
-        acceptableAnswers: ['stephen appiah', 'steven appiah', 'stephen appia', 'steven appia', 'appiah', 'appia']
-    },
     27: {
         career: [
             "1994–97/	Ajax/	42	(6)",
@@ -77,6 +50,38 @@ const data = {
         ],
         answer: 'Simon Charlton',
         acceptableAnswers: ['simon charlton', 'chartlon']
+    },
+    30: {
+        career: [
+            "2001–02/	Rio Sport/	30	(17)",
+            "2002–03/	Lierse/	32	(11)",
+            "2003–05/	Roda JC/	63	(27)",
+            "2005–07/	PSV/	53	(21)",
+            "2007–12/	Sevilla/	40	(1)",
+            "2010/	→ Hannover 96 (loan)/	8	(2)",
+            "2011–12/	→ Levante (loan)/	34	(15)",
+            "2012/	Levante/	0	(0)",
+            "2012–13/	Wigan Athletic/	34	(11)",
+            "2013–17/	Everton/	47	(6)",
+            "2017–22/	Sivasspor/	109	(32)",
+        ],
+        answer: 'Arouna Koné',
+        acceptableAnswers: ['arouna koné', 'arouna kone', 'aruna koné', 'aruna kone', 'kone']
+    },
+    31: {
+        career: [
+            "1996–98/	Tranmere Rovers/	35	(0)",
+            "1998–04/	Everton/	30	(0)",
+            "2004–10/	Stoke City/	166	(0)",
+            "2010/	→ Sheffield United (loan)/	7	(0)",
+            "2010–12/	Sheffield United/	89	(0)",
+            "2012–13/	Preston North End/	10	(0)",
+            "2013/	Dundee/	8	(0)",
+            "2013–15/	Rangers/	20	(0)",
+            "2015–16/	Pune City/	10	(0)",
+        ],
+        answer: 'Steve Simonsen',
+        acceptableAnswers: ['steve simonsen', 'steve simonson', 'steven simonson', 'steven simonsen', 'stephen simonsen', 'stephen simonson', 'simonsen', 'simonson']
     }
 };
 
