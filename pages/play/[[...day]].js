@@ -9,6 +9,30 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
+    1:{
+        career: [
+            "2005–07/	Arsenal/	1	(0)",
+            "2006–07/	→ Derby County (loan)[A]/	35	(7)",
+            "2007–09/	Fiorentina/	0	(0)",
+            "2008/	→ Treviso (loan)/	17	(1)",
+            "2008–09/	→ Norwich City (loan)/	17	(4)",
+            "2009/	→ Sheffield United (loan)/	11	(2)",
+            "2009–11/	Ascoli/	66	(11)",
+            "2011–13/	Grosseto/	45	(8)",
+            "2013–15/	Varese/	23	(6)",
+            "2014/	→ Budapest Honvéd (loan)/	4	(0)",
+            "2015/	Frosinone/	11	(1)",
+            "2015–17/	Pisa/	10	(2)",
+            "2016/	→ Catania (loan)/	10	(0)",
+            "2017/	Südtirol/	12	(0)",
+            "2017–19/	Fermana/	72	(11)",
+            "2019–20/	Virtus Verona/	17	(2)",
+            "2020–21/	Montegiorgio/	21	(8)",
+            "2021–22/	Borgo San Donnino/	5	(0)",
+        ],
+        answer: 'Arturo Lupoli',
+        acceptableAnswers: ['arturo lupoli', 'lupoli', 'artur lupoli', 'lupili', 'arturo lupili']
+    },
     27: {
         career: [
             "1994–97/	Ajax/	42	(6)",
