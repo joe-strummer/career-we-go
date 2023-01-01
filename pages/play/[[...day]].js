@@ -33,6 +33,36 @@ const data = {
         answer: 'Arturo Lupoli',
         acceptableAnswers: ['arturo lupoli', 'lupoli', 'artur lupoli', 'lupili', 'arturo lupili']
     },
+    2:{
+        career: [
+            "1986–89/	Newport County/	28	(0)",
+            "1989–90/	Hereford United/	59	(4)",
+            "1990–94/	Queens Park Rangers/	126	(6)",
+            "1994–98/	Newcastle United/	133	(2)",
+            "1998–00/	Blackburn Rovers/	47	(1)",
+            "2000/	→ West Ham United (loan/)	0	(0)",
+            "2000/	→ Wolverhampton Wanderers (loan/)	4	(0)",
+        ],
+        answer: 'Darren Peacock',
+        acceptableAnswers: ['darren peacock', 'peacock', 'darron peacock']
+    },
+    3: {
+        career: [
+            "1989–91/	Manchester City/	1	(0)",
+            "1991/	→ Wrexham (loan)/	4	(2)",
+            "1991–92/	Leicester City/	10	(0)",
+            "1992/	→ Blackpool (loan)/	2	(1)",
+            "1992–94/	Crewe Alexandra/	61	(25)",
+            "1994–96/	Norwich City/	53	(18)",
+            "1996–97/	Derby County/	40	(9)",
+            "1997–98/	Barnsley/	46	(20)",
+            "1998–00/	Blackburn Rovers/	54	(13)",
+            "2000–03/	Bradford City/	84	(17)",
+            "2003–05/	Sheffield United/	33	(5)",
+        ],
+        answer: 'Ashley Ward',
+        acceptableAnswers: ['ashley ward', 'ward', 'ashly ward']
+    },
     27: {
         career: [
             "1994–97/	Ajax/	42	(6)",
