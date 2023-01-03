@@ -63,79 +63,35 @@ const data = {
         answer: 'Ashley Ward',
         acceptableAnswers: ['ashley ward', 'ward', 'ashly ward']
     },
-    27: {
+    4: {
         career: [
-            "1994–97/	Ajax/	42	(6)",
-            "1997–99/	Bordeaux/	33	(5)",
-            "1999–03/	Málaga/	96	(22)",
-            "2003–06/	Atlético Madrid/	34	(2)",
-            "2005–06/	→ Manchester City (loan)/	41	(3)",
-            "2006–07/	Trabzonspor/	14	(0)",
-            "2007–08/	AZ/	5	(0)",
-            "2008/	FC Seoul/	3	(0)",
-            "2009/	Willem II/	6	(0)",
+            "1996–00/	Arsenal Ladies/	47	(8)",
+            "2000/	→ Laval Dynamites (loan)/	25	(10)",
+            "2000–04/	Fulham Ladies/	15	(6)",
+            "2004–05/	Birmingham Ladies/	13	(7)",
+            "2005/	New Jersey Wildcats/	29	(5)",
+            "2005–16/	Arsenal Ladies/	151	(43)",
+            "2016/	→ Notts County Ladies (loan)/	5	(0)",
         ],
-        answer: 'Kiki Musampa',
-        acceptableAnswers: ['kiki musampa', 'kiki', 'musampa']
+        answer: 'Rachel Yankey',
+        acceptableAnswers: ['rachel yankey', 'rachel yankee', 'rachel yanky', 'yanky', 'yankey', 'yankee']
     },
-    28: {
+    5: {
         career: [
-            "1996–97/	Barcelona B/	32	(10)",
-            "1997–00/	Valencia/	45	(4)",
-            "1998–99/	→ Alavés (loan)/	29	(7)",
-            "2000–05/	Barcelona/	91	(5)",
-            "2005–07/	Monaco/	13	(1)",
-            "2007–08/	Recreativo/	18	(0)",
-            "2009–11/	Girona/	31	(4)",
+            "1996–98/	Stoke City	/57	(2)",
+            "1998–04/	Newcastle United	/76	(2)",
+            "2004–07/	Portsmouth	/43	(0)",
+            "2006–07/	→ Stoke City (loan)	/33	(2)",
+            "2007–08/	Derby County	/15	(0)",
+            "2008–10/	Stoke City	/35	(0)",
+            "2010/	→ Reading (loan)	/21	(0)",
+            "2010–12/	Reading	/42	(0)",
+            "2012–13/	Doncaster Rovers	/16	(0)",
+            "2014/	Chester	/4	(0)",
         ],
-        answer: 'Gerard López',
-        acceptableAnswers: ['gerard lópez', 'gerard lopez', 'gerard', 'gerrard', 'gerrard lopez', 'lopez', 'lópez']
-    },
-    29: {
-        career: [
-            "1989–93/	Huddersfield Town/	124	(1)",
-            "1993–98/	Southampton/	114	(2)",
-            "1997–98/	→ Birmingham City (loan)/	5	(0)",
-            "1998–00/	Birmingham City/	67	(0)",
-            "2000–04/	Bolton Wanderers/	120	(0)",
-            "2004–06/	Norwich City/	45	(2)",
-            "2006–07/	Oldham Athletic/	34	(1)",
-            "2009–10/	Mildenhall Town/	2	(0)",
-        ],
-        answer: 'Simon Charlton',
-        acceptableAnswers: ['simon charlton', 'chartlon']
-    },
-    30: {
-        career: [
-            "2001–02/	Rio Sport/	30	(17)",
-            "2002–03/	Lierse/	32	(11)",
-            "2003–05/	Roda JC/	63	(27)",
-            "2005–07/	PSV/	53	(21)",
-            "2007–12/	Sevilla/	40	(1)",
-            "2010/	→ Hannover 96 (loan)/	8	(2)",
-            "2011–12/	→ Levante (loan)/	34	(15)",
-            "2012/	Levante/	0	(0)",
-            "2012–13/	Wigan Athletic/	34	(11)",
-            "2013–17/	Everton/	47	(6)",
-            "2017–22/	Sivasspor/	109	(32)",
-        ],
-        answer: 'Arouna Koné',
-        acceptableAnswers: ['arouna koné', 'arouna kone', 'aruna koné', 'aruna kone', 'kone']
-    },
-    31: {
-        career: [
-            "1996–98/	Tranmere Rovers/	35	(0)",
-            "1998–04/	Everton/	30	(0)",
-            "2004–10/	Stoke City/	166	(0)",
-            "2010/	→ Sheffield United (loan)/	7	(0)",
-            "2010–12/	Sheffield United/	89	(0)",
-            "2012–13/	Preston North End/	10	(0)",
-            "2013/	Dundee/	8	(0)",
-            "2013–15/	Rangers/	20	(0)",
-            "2015–16/	Pune City/	10	(0)",
-        ],
-        answer: 'Steve Simonsen',
-        acceptableAnswers: ['steve simonsen', 'steve simonson', 'steven simonson', 'steven simonsen', 'stephen simonsen', 'stephen simonson', 'simonsen', 'simonson']
+        answer: 'Andy Griffin',
+        acceptableAnswers: ['andy griffin', 'andrew griffin', 'griffin', 'andy griffen', 'griffen', 'griffon', 'gryfyn']
+
     }
 };
 
