@@ -405,7 +405,7 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
 ${timeEmojiUTF}${count}s
 
 Can you name the player and beat my time?
-⚽️https://careerwego.com`
+https://careerwego.com ⚽️ @CareerWeGoPod`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
             }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
