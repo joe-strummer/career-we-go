@@ -87,6 +87,7 @@ export default function Home() {
       </Head>
 
         <div className={styles.App} style={{ filter: instructionOverlay ? 'blur(8px)' : 'none'}}>
+          <a className={styles.howToPlayCTA} onClick={() => setInstructionOverlay(true)}>?</a>
           <header className={styles.header}>
             <Snowfall 
               color="#eee7d6cc" 
@@ -107,10 +108,10 @@ export default function Home() {
                 <Link href='play'>PLAY</Link>
               </p>
               <p className={styles.ctaplay}>
-                <a onClick={() => setInstructionOverlay(true)}>HOW TO PLAY</a>
+                <Link href='https://linktr.ee/careerwego'>LISTEN</Link>
               </p>
               <p className={styles.ctaplay}>
-                <Link href='https://linktr.ee/careerwego'>LISTEN</Link>
+                <Link href='mailto://careerwegopod@gmail.com'>CONTACT</Link>
               </p>
             </div>
           </header>

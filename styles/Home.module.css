@@ -47,6 +47,19 @@
   /* color: rgb(240, 240, 240); */
 }
 
+.howToPlayCTA {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 32px;
+  margin: 12px;
+  cursor: pointer;
+}
+
 .overlayHowToPlay {
   font-family: MontserratMedium, sans-serif;
   position: absolute;
