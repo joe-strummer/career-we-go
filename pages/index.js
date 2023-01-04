@@ -111,7 +111,7 @@ export default function Home() {
                 <Link href='https://linktr.ee/careerwego'>LISTEN</Link>
               </p>
               <p className={styles.ctaplay}>
-                <Link href='mailto://careerwegopod@gmail.com'>CONTACT</Link>
+                <Link href='mailto:careerwegopod@gmail.com'>CONTACT</Link>
               </p>
             </div>
           </header>
