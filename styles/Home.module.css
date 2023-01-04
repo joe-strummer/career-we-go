@@ -52,10 +52,15 @@
   position: absolute;
   top: 0;
   background: #000000db;
-  padding: 48px;
-  margin: 48px;
+  padding: 32px;
+  margin: 32px;
+  pointer-events: none;
+}
+
+.overlayHowToPlay p {
   line-height: 25px;
 }
+
 
 .headerSmall {
   font-family: MontserratBlack, sans-serif;
