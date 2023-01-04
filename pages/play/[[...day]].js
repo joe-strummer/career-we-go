@@ -333,12 +333,13 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
     const timeEmoji = '⏳';//'%E2%8F%B3';
     const newLine = '%0A'
     const tickEmoji = '✅';//'%E2%9C%85';
+    const podEmoji = '🎙';
 
     const timeEmojiUTF = '⏳';
     const xEmojiUTF = '❌';
     const tickEmojiUTF = '✅';
 
-    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}Can%20you%20name%20the%20player%20and%20beat%20my%20time?${newLine}⚽️@CareerWeGoPod`;
+    const tweetText = `${xEmoji.repeat(incorrectGuesses)}${tickEmoji}${newLine}${timeEmoji}${count}s${newLine}${newLine}Can%20you%20name%20the%20player%20and%20beat%20my%20time?${newLine}🎙@CareerWeGoPod${newLine}⚽️`;
 
     return (<div style={panelStyle}>    
         <div style={{
@@ -361,7 +362,8 @@ const GuessingPanel = ({ active, answer, acceptableAnswers, handleFinish, count 
 ${timeEmojiUTF}${count}s
 
 Can you name the player and beat my time?
-https://careerwego.com ⚽️ @CareerWeGoPod`
+⚽️https://careerwego.com
+🎙@CareerWeGoPod`
                 navigator.clipboard.writeText(results);
                 setIsCopied(true);
             }}>{ isCopied ? 'Copied!' : '📋 Copy your results to clipboard' }</a></p>
