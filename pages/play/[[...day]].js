@@ -374,7 +374,7 @@ https://careerwego.com ⚽️ @CareerWeGoPod`
                 marginTop: 48,
                 fontWeight: 200,
                 fontStyle: 'italic',
-            }}><a style={{padding: 12, color: 'rgba(255,255,255,0.5)'}} onClick={() => { handleFinish('correct')}}>← See his career</a></p>
+            }}><a style={{padding: 12, color: 'rgba(255,255,255,0.5)'}} onClick={() => { handleFinish('correct')}}>← See their career</a></p>
         </div>
         <div className={styles.panel} style={{
             display: isCorrect ? 'none' : 'block'
