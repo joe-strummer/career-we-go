@@ -115,6 +115,9 @@ export default function Play() {
             </div>
         );
     }
+    const xEmoji = '❌';//'%E2%9D%8C';
+    const newLine = '%0A'
+    const tweetTextDefeated = `🙈⚽️❌${newLine}${newLine}I%20was%20defeated%20today.%20Can%20you%20name%20the%20player?${newLine}${newLine}🎙@CareerWeGoPod${newLine}⚽️`;
 
     const { career, answer, acceptableAnswers } = careerData;
 
@@ -234,10 +237,15 @@ export default function Play() {
                         } }>{giveUp === false ? 'Give up' : 'Sure?'}</a>
                     </div>)}
                     {
-                        correct && (<a style={{cursor: 'pointer', padding: 32 }} onClick={() => {setGuessMode(true)}}>Share results</a>)
+                        (correct) && (<a style={{cursor: 'pointer', padding: 32 }} onClick={() => {setGuessMode(true)}}>Share results</a>)
                     }
                     {
-                        !!giveUp && <p>Better luck tomorrow...</p>
+                        !!giveUp && <>
+                            <p>Better luck tomorrow...</p>
+                            <a style={{color: 'rgb(27,155,240'}} className="twitter-share-button"
+                            href={`https://twitter.com/intent/tweet?text=${tweetTextDefeated}&url=https://careerwego.com`} data-text={tweetTextDefeated} data-url="https://careerwego.com">
+                            🐦 Share on Twitter to see if your friends do any better...</a>
+                        </>
                     }
                 </div>
                 <GuessingPanel 

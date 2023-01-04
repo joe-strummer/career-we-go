@@ -6,9 +6,37 @@ import Snowfall from 'react-snowfall';
 import { getWinStreak } from '../utils/streaks';
 import styles from '../styles/Home.module.css'
 
+
+function HowToPlay({ display=false, onCloseAction}) {
+  return (
+    <div style={{
+      width: '100%',
+      height: '100vh',
+      background: '#00000030',
+      position: 'absolute',
+      top: 0,
+      display: display ? 'block' : 'none'
+    }} onClick={onCloseAction}>
+      <div className={styles.overlayHowToPlay}>
+          <h1>How To Play</h1>
+          <p>
+              Club by club a player's career stats will be revealed.
+          </p>
+          <p>
+              When you think you know, check by pressing Answer.
+          </p>
+          <p>
+              You're playing against the clock, so be sure to share with us how well you did afterwards!
+          </p>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const [darkMode, setDarkMode] = useState(true);
   const [winStreak, setWinStreak] = useState('...');
+  const [instructionOverlay, setInstructionOverlay] = useState(false);
 
   const darkModeOn = () => {
     setDarkMode(true);
@@ -58,7 +86,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-        <div className={styles.App}>
+        <div className={styles.App} style={{ filter: instructionOverlay ? 'blur(8px)' : 'none'}}>
+          <a className={styles.howToPlayCTA} onClick={() => setInstructionOverlay(true)}>?</a>
           <header className={styles.header}>
             <Snowfall 
               color="#eee7d6cc" 
@@ -72,15 +101,22 @@ export default function Home() {
               GO
             </p>
             <p className={styles.subheader}>
-              THE FOOTBALL TRIVIA WEBSITE
+              THE FOOTBALL TRIVIA PODCAST
             </p>
             <div className={styles.ctas}>
               <p className={styles.ctaplay}>
-                <Link style={{ padding: 24 }} href='play'>PLAY</Link>
+                <Link href='play'>PLAY</Link>
+              </p>
+              <p className={styles.ctaplay}>
+                <Link href='https://linktr.ee/careerwego'>LISTEN</Link>
+              </p>
+              <p className={styles.ctaplay}>
+                <Link href='mailto:careerwegopod@gmail.com'>CONTACT</Link>
               </p>
             </div>
           </header>
         </div>
+        <HowToPlay display={instructionOverlay} onCloseAction={() => setInstructionOverlay(false)} />
         <button 
           className={styles.darkMode} 
           onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
