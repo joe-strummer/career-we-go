@@ -9,73 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    1:{
-        career: [
-            "2005–07/	Arsenal/	1	(0)",
-            "2006–07/	→ Derby County (loan)[A]/	35	(7)",
-            "2007–09/	Fiorentina/	0	(0)",
-            "2008/	→ Treviso (loan)/	17	(1)",
-            "2008–09/	→ Norwich City (loan)/	17	(4)",
-            "2009/	→ Sheffield United (loan)/	11	(2)",
-            "2009–11/	Ascoli/	66	(11)",
-            "2011–13/	Grosseto/	45	(8)",
-            "2013–15/	Varese/	23	(6)",
-            "2014/	→ Budapest Honvéd (loan)/	4	(0)",
-            "2015/	Frosinone/	11	(1)",
-            "2015–17/	Pisa/	10	(2)",
-            "2016/	→ Catania (loan)/	10	(0)",
-            "2017/	Südtirol/	12	(0)",
-            "2017–19/	Fermana/	72	(11)",
-            "2019–20/	Virtus Verona/	17	(2)",
-            "2020–21/	Montegiorgio/	21	(8)",
-            "2021–22/	Borgo San Donnino/	5	(0)",
-        ],
-        answer: 'Arturo Lupoli',
-        acceptableAnswers: ['arturo lupoli', 'lupoli', 'artur lupoli', 'lupili', 'arturo lupili']
-    },
-    2:{
-        career: [
-            "1986–89/	Newport County/	28	(0)",
-            "1989–90/	Hereford United/	59	(4)",
-            "1990–94/	Queens Park Rangers/	126	(6)",
-            "1994–98/	Newcastle United/	133	(2)",
-            "1998–00/	Blackburn Rovers/	47	(1)",
-            "2000/	→ West Ham United (loan/)	0	(0)",
-            "2000/	→ Wolverhampton Wanderers (loan/)	4	(0)",
-        ],
-        answer: 'Darren Peacock',
-        acceptableAnswers: ['darren peacock', 'peacock', 'darron peacock']
-    },
-    3: {
-        career: [
-            "1989–91/	Manchester City/	1	(0)",
-            "1991/	→ Wrexham (loan)/	4	(2)",
-            "1991–92/	Leicester City/	10	(0)",
-            "1992/	→ Blackpool (loan)/	2	(1)",
-            "1992–94/	Crewe Alexandra/	61	(25)",
-            "1994–96/	Norwich City/	53	(18)",
-            "1996–97/	Derby County/	40	(9)",
-            "1997–98/	Barnsley/	46	(20)",
-            "1998–00/	Blackburn Rovers/	54	(13)",
-            "2000–03/	Bradford City/	84	(17)",
-            "2003–05/	Sheffield United/	33	(5)",
-        ],
-        answer: 'Ashley Ward',
-        acceptableAnswers: ['ashley ward', 'ward', 'ashly ward']
-    },
-    4: {
-        career: [
-            "1996–00/	Arsenal Ladies/	47	(8)",
-            "2000/	→ Laval Dynamites (loan)/	25	(10)",
-            "2000–04/	Fulham Ladies/	15	(6)",
-            "2004–05/	Birmingham Ladies/	13	(7)",
-            "2005/	New Jersey Wildcats/	29	(5)",
-            "2005–16/	Arsenal Ladies/	151	(43)",
-            "2016/	→ Notts County Ladies (loan)/	5	(0)",
-        ],
-        answer: 'Rachel Yankey',
-        acceptableAnswers: ['rachel yankey', 'rachel yankee', 'rachel yanky', 'yanky', 'yankey', 'yankee']
-    },
     5: {
         career: [
             "1996–98/	Stoke City	/57	(2)",
@@ -91,7 +24,37 @@ const data = {
         ],
         answer: 'Andy Griffin',
         acceptableAnswers: ['andy griffin', 'andrew griffin', 'griffin', 'andy griffen', 'griffen', 'griffon', 'gryfyn']
-
+    },
+    6: {
+        career: [
+            "1998–99/	Napoli/	2	(0)",
+            "1999–06/	Parma/	92	(4)",
+            "2001–02/	→ Verona (loan)/	24	(1)",
+            "2006–14/	Napoli/	236	(8)",
+            "2014/	→ Sassuolo (loan)/	16	(0)",
+            "2014–17/	Sassuolo/	94	(1)",
+            "Total/	/	464	(14)",
+        ],
+        answer: 'Paolo Cannavaro',
+        acceptableAnswers: ['paolo cannavaro', 'cannavaro', 'paolo canavaro', 'cannavarro', 'canavaro']
+    },
+    7: {
+        career: [
+            "2004–08/	Newcastle United/	51	(0)",
+            "2008–12/	Queens Park Rangers/	68	(2)",
+            "2011–12/	→ Crystal Palace (loan)/	17	(0)",
+            "2012/	→ Birmingham City (loan)/	14	(0)",
+            "2012–15/	Crystal Palace/	40	(4)",
+            "2013/	→ Barnsley (loan)/	24	(0)",
+            "2014–15/	→ Barnsley (loan)/	19	(3)",
+            "2015/	Kerala Blasters/	14	(0)",
+            "2016/	Coventry City/	4	(0)",
+            "2016/	→ Leyton Orient (loan)/	8	(0)",
+            "2016–17/	Phoenix Rising/	36	(2)",
+            "Total/	/	295	(11)",
+        ],
+        answer: 'Peter Ramage',
+        acceptableAnswers: ['peter ramage', 'peter rammage', 'rammage', 'ramage']
     }
 };
 
