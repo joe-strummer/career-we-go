@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { stringSimilarity } from "string-similarity-js";
 import { useState, useEffect, useRef } from 'react';
@@ -187,7 +188,7 @@ export default function Play() {
                         </p>
 
                         <p className={correct || giveUp ? styles.timer : styles.timerAnimation}>{
-                            !guessMode && (count < 0 ? 'Get Ready...' : `${count}s⏳`)
+                            !guessMode && (count < 0 ? 'Get Ready...' : <>{count}s<Image src={'/timer.png'} width={24} height={24} /></>)
                         }</p>
                     </div>
                     {/* Whose career is this? GET READY... */}

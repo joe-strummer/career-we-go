@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react';
-import Snowfall from 'react-snowfall';
 
 import { getWinStreak } from '../utils/streaks';
 import styles from '../styles/Home.module.css'
@@ -89,16 +89,9 @@ export default function Home() {
         <div className={styles.App} style={{ filter: instructionOverlay ? 'blur(8px)' : 'none'}}>
           <a className={styles.howToPlayCTA} onClick={() => setInstructionOverlay(true)}>?</a>
           <header className={styles.header}>
-            <Snowfall 
-              color="#eee7d6cc" 
-              radius= {[0.1, 0.5]}
-              speed= {[0.1, 0.5]}
-              wind= {[-0.5, 0]}
-               />
+            <Image style={{width: '100%', margin: '0 auto'}} width={200} height={200} src={'/welcome.gif'} />
             <p className={styles.logo}>
-              CAREER<br />
-              WE<br />
-              GO
+              CAREER WE GO
             </p>
             <p className={styles.subheader}>
               THE FOOTBALL TRIVIA PODCAST
@@ -117,11 +110,6 @@ export default function Home() {
           </header>
         </div>
         <HowToPlay display={instructionOverlay} onCloseAction={() => setInstructionOverlay(false)} />
-        <button 
-          className={styles.darkMode} 
-          onClick={() => { darkMode ? darkModeOff() : darkModeOn() }}>
-            {darkMode? '☀️ LIGHT' : '🌑 DARK'} MODE
-        </button>
         <span style={{position: 'fixed', bottom:0, left: 0, fontSize: 12, opacity: 0.3}}>v1.10</span>
     </div>
   )

@@ -4,17 +4,17 @@ body {
   --mainaccent: #8CD790;
   --mainbold: #1A2521;
   --mainboldOP: #1a2521ad;
-  --table: #eee7d6; 
+  --table: #00bfff; 
   --fadeBG: rgba(255,255,255,0.1);
 }
 
 body.dark {
-    --bgcolour: #1A2521;
-    --maincolour: #ffdd00c9;
+    --bgcolour: #000000;
+    --maincolour: #ff02f7c9;
     --mainaccent: #8CD790;
     --mainbold: #eee7d6cc;
     --mainboldOP: #1A25214a;
-    --table: #1A2521;
+    --table: #00feff;
     --fadeBG: rgba(0,0,0,0.2);
 }
 
@@ -31,10 +31,10 @@ body {
   padding: 0;
   margin: 0;
   /* transition: background-color 0.6s, color 0.6s; */
-  background: var(--bgcolour);
+  background-image: url('/background.png');
+  background-color: var(--bgcolour);
   color: var(--maincolour);
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 a {
