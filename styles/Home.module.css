@@ -37,14 +37,13 @@
 .header {
   margin: 0 calc(10px + 1vmin);
   font-family: MontserratBlack, sans-serif;
-  height: 90vh;
+  padding-top: 12vh;
   text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 15vmin);
-  line-height: calc(10px + 12vmin);;
-  /* color: rgb(240, 240, 240); */
+  line-height: calc(10px + 12vmin);
 }
 
 .howToPlayCTA {

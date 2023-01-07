@@ -11,50 +11,81 @@ import styles from '../../styles/Home.module.css';
 const data = {
     5: {
         career: [
-            "1996–98/	Stoke City	/57	(2)",
-            "1998–04/	Newcastle United	/76	(2)",
-            "2004–07/	Portsmouth	/43	(0)",
-            "2006–07/	→ Stoke City (loan)	/33	(2)",
-            "2007–08/	Derby County	/15	(0)",
-            "2008–10/	Stoke City	/35	(0)",
-            "2010/	→ Reading (loan)	/21	(0)",
-            "2010–12/	Reading	/42	(0)",
-            "2012–13/	Doncaster Rovers	/16	(0)",
-            "2014/	Chester	/4	(0)",
+            "1996–98/	Stoke City	/57	/(2)",
+            "1998–04/	Newcastle United	/76	/(2)",
+            "2004–07/	Portsmouth	/43	/(0)",
+            "2006–07/	→ Stoke City (loan)	/33/	(2)",
+            "2007–08/	Derby County	/15	/(0)",
+            "2008–10/	Stoke City	/35/	(0)",
+            "2010/	→ Reading (loan)	/21	/(0)",
+            "2010–12/	Reading	/42	/(0)",
+            "2012–13/	Doncaster Rovers	/16	/(0)",
+            "2014/	Chester	/4	/(0)",
         ],
         answer: 'Andy Griffin',
         acceptableAnswers: ['andy griffin', 'andrew griffin', 'griffin', 'andy griffen', 'griffen', 'griffon', 'gryfyn']
     },
     6: {
         career: [
-            "1998–99/	Napoli/	2	(0)",
-            "1999–06/	Parma/	92	(4)",
-            "2001–02/	→ Verona (loan)/	24	(1)",
-            "2006–14/	Napoli/	236	(8)",
-            "2014/	→ Sassuolo (loan)/	16	(0)",
-            "2014–17/	Sassuolo/	94	(1)",
-            "Total/	/	464	(14)",
+            "1998–99/	Napoli/	2	/(0)",
+            "1999–06/	Parma/	92	/(4)",
+            "2001–02/	→ Verona (loan)/	24	/(1)",
+            "2006–14/	Napoli/	236	/(8)",
+            "2014/	→ Sassuolo (loan)/	16	/(0)",
+            "2014–17/	Sassuolo/	94	/(1)",
+            "Total/	/	464	/(14)",
         ],
         answer: 'Paolo Cannavaro',
         acceptableAnswers: ['paolo cannavaro', 'cannavaro', 'paolo canavaro', 'cannavarro', 'canavaro']
     },
     7: {
         career: [
-            "2004–08/	Newcastle United/	51	(0)",
-            "2008–12/	Queens Park Rangers/	68	(2)",
-            "2011–12/	→ Crystal Palace (loan)/	17	(0)",
-            "2012/	→ Birmingham City (loan)/	14	(0)",
-            "2012–15/	Crystal Palace/	40	(4)",
-            "2013/	→ Barnsley (loan)/	24	(0)",
-            "2014–15/	→ Barnsley (loan)/	19	(3)",
-            "2015/	Kerala Blasters/	14	(0)",
-            "2016/	Coventry City/	4	(0)",
-            "2016/	→ Leyton Orient (loan)/	8	(0)",
-            "2016–17/	Phoenix Rising/	36	(2)",
-            "Total/	/	295	(11)",
+            "2004–08/	Newcastle United/	51	/(0)",
+            "2008–12/	Queens Park Rangers/	68	/(2)",
+            "2011–12/	→ Crystal Palace (loan)/	17	/(0)",
+            "2012/	→ Birmingham City (loan)/	14	/(0)",
+            "2012–15/	Crystal Palace/	40	/(4)",
+            "2013/	→ Barnsley (loan)/	24	/(0)",
+            "2014–15/	→ Barnsley (loan)/	19	/(3)",
+            "2015/	Kerala Blasters/	14	/(0)",
+            "2016/	Coventry City/	4	/(0)",
+            "2016/	→ Leyton Orient (loan)/	8	/(0)",
+            "2016–17/	Phoenix Rising/	36	/(2)",
+            "Total/	/	295	/(11)",
         ],
         answer: 'Peter Ramage',
         acceptableAnswers: ['peter ramage', 'peter rammage', 'rammage', 'ramage']
+    },
+    8: {
+        career: `1995–1997	Progreso	22	(12)
+        1997–1998	Basáñez	0	(0)
+        1998–2000	Peñarol	71	(29)
+        2000–2005	Deportivo La Coruña	86	(31)
+        2002–2003	→ Mallorca (loan)	33	(13)
+        2005	→ Birmingham City (loan)	14	(4)
+        2005–2006	Birmingham City	17	(2)
+        2006–2007	Espanyol	52	(8)
+        2007–2011	Osasuna	92	(27)
+        2011–2012	Espanyol	16	(3)
+        2012–2013	Villarreal	17	(2)
+        2013	Atlético Baleares	9	(1)
+        2013–2014	Miramar Misiones	19	(5)
+        2015–2016	Lausanne-Sport	15	(1)
+        Total		463	(138)
+        `.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Walter Pandiani',
+        acceptableAnswers: ['walter pandiani', 'pandini', 'pandiani']
+    },
+    9: {
+        career: `1997–1998	Arsenal	0	(0)
+        1998–2002	AFC Bournemouth	131	(14)
+        2002–2011	Portsmouth	131	(1)
+        2003	→ Grimsby Town (loan)	12	(1)
+        2012–2014	AFC Bournemouth	26	(1)
+        Total		300	(17)
+        `.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Richard Hughes',
+        acceptableAnswers: ['richard hughes', 'hughes']
     }
 };
 
@@ -133,7 +164,7 @@ export default function Play() {
             <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className={styles.App}>
+            <div className={styles.App} onClick={() => { if (count < 0) setCount(0);}}>
                 <div style={{
                     filter: guessMode ? 'blur(5px)' : 'none',
                     display: 'flex',
@@ -169,7 +200,8 @@ export default function Play() {
                                 <tr style={{fontWeight: 'bold'}}>
                                     <th className={styles.cell}>Years </th>
                                     <th className={styles.cellTeam}>Team</th>
-                                    <th className={styles.cell}>Apps (goals)</th>
+                                    <th className={styles.cell}>Apps</th>
+                                    <th className={styles.cell}>(goals)</th>
                                 </tr>
                             {
                                 career.map((team, i) => {

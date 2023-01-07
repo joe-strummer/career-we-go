@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
-import Snowfall from 'react-snowfall';
 
 import { getWinStreak } from '../utils/streaks';
 import styles from '../styles/Home.module.css'
@@ -90,12 +89,6 @@ export default function Home() {
         <div className={styles.App} style={{ filter: instructionOverlay ? 'blur(8px)' : 'none'}}>
           <a className={styles.howToPlayCTA} onClick={() => setInstructionOverlay(true)}>?</a>
           <header className={styles.header}>
-            {date.getUTCDate() < 6 && (<Snowfall 
-              color="#eee7d6cc" 
-              radius= {[0.1, 0.5]}
-              speed= {[0.1, 0.5]}
-              wind= {[-0.5, 0]}
-               />)}
             <p className={styles.logo}>
               CAREER<br />
               WE<br />
