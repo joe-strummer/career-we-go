@@ -77,15 +77,14 @@ const data = {
         acceptableAnswers: ['walter pandiani', 'pandini', 'pandiani']
     },
     9: {
-        career: `1997–1998	Arsenal	0	(0)
-        1998–2002	AFC Bournemouth	131	(14)
-        2002–2011	Portsmouth	131	(1)
-        2003	→ Grimsby Town (loan)	12	(1)
-        2012–2014	AFC Bournemouth	26	(1)
-        Total		300	(17)
-        `.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
-        answer: 'Richard Hughes',
-        acceptableAnswers: ['richard hughes', 'hughes']
+        career: `1995–1996	Næstved BK	4	(0)
+        1996–1998	Lyngby FC	62	(14)
+        1998–2000	Bolton Wanderers	86	(8)
+        2000–2004	Charlton Athletic	123	(16)
+        2004–2007	Fulham	35	(4)
+        Total		310	(42)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Claus Jensen',
+        acceptableAnswers: ['claus jensen', 'jensen', 'clause jensen', 'klaus jensen', 'claus jenson', 'jenson', 'klaus jenson', 'jennson', 'jennsen']
     }
 };
 
