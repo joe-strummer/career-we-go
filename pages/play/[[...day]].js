@@ -9,35 +9,6 @@ import { recordStreak } from '../../utils/streaks';
 import styles from '../../styles/Home.module.css';
 
 const data = {
-    5: {
-        career: [
-            "1996–98/	Stoke City	/57	/(2)",
-            "1998–04/	Newcastle United	/76	/(2)",
-            "2004–07/	Portsmouth	/43	/(0)",
-            "2006–07/	→ Stoke City (loan)	/33/	(2)",
-            "2007–08/	Derby County	/15	/(0)",
-            "2008–10/	Stoke City	/35/	(0)",
-            "2010/	→ Reading (loan)	/21	/(0)",
-            "2010–12/	Reading	/42	/(0)",
-            "2012–13/	Doncaster Rovers	/16	/(0)",
-            "2014/	Chester	/4	/(0)",
-        ],
-        answer: 'Andy Griffin',
-        acceptableAnswers: ['andy griffin', 'andrew griffin', 'griffin', 'andy griffen', 'griffen', 'griffon', 'gryfyn']
-    },
-    6: {
-        career: [
-            "1998–99/	Napoli/	2	/(0)",
-            "1999–06/	Parma/	92	/(4)",
-            "2001–02/	→ Verona (loan)/	24	/(1)",
-            "2006–14/	Napoli/	236	/(8)",
-            "2014/	→ Sassuolo (loan)/	16	/(0)",
-            "2014–17/	Sassuolo/	94	/(1)",
-            "Total/	/	464	/(14)",
-        ],
-        answer: 'Paolo Cannavaro',
-        acceptableAnswers: ['paolo cannavaro', 'cannavaro', 'paolo canavaro', 'cannavarro', 'canavaro']
-    },
     7: {
         career: [
             "2004–08/	Newcastle United/	51	/(0)",
@@ -85,6 +56,37 @@ const data = {
         Total		310	(42)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
         answer: 'Claus Jensen',
         acceptableAnswers: ['claus jensen', 'jensen', 'clause jensen', 'klaus jensen', 'claus jenson', 'jenson', 'klaus jenson', 'jennson', 'jennsen']
+    },
+    10: {
+        career: `1991–1994	Pontioi Veria	85	(7)
+        1994–1998	Olympiacos	104	(8)
+        1998–2003	Newcastle United	130	(11)
+        2003–2005	Leicester City	51	(1)
+        2005–2011	AEL	144	(4)
+        Total		514	(31)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Nikos Dabizas',
+        acceptableAnswers: ['nikos dabizas', 'niko dabizas', 'dabizas', 'dabisaz', 'dabezas', 'nikos dabezas']
+    },
+    11: {
+        career: `1994–1995	Barcelona B	14	(3)
+        1995–1999	Barcelona	72	(4)
+        1999–2000	Celta	24	(1)
+        2000–2005	Real Madrid	56	(1)
+        2003–2004	→ Bordeaux (loan)	27	(3)
+        2005–2008	Zaragoza	71	(2)
+        2009	New York Red Bulls	17	(1)
+        2010	Kitchee	0	(0)
+        Total		281	(15)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Albert Celades',
+        acceptableAnswers: ['albert celades', 'celades', 'calades', 'albert calades', 'caledas', 'albert caledas', 'celedas', 'albert celedas']
+    },
+    12: {
+        career: `1997–2001	CS Sfaxien	103	(13)
+        2001–2006	Ajax	99	(2)
+        2006–2007	Manchester City	20	(1)
+        Total		222	(16)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        answer: 'Hatem Trabelsi',
+        acceptableAnswers: ['hatem trabelsi', 'trabelsi', 'trabelsy', 'trabelsie', 'hatem trabelsy', 'hatem trabelsie', 'hartem trabelsi', 'hartem trabelsy']
     }
 };
 
