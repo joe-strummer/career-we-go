@@ -8,6 +8,8 @@ import { recordStreak } from '../../utils/streaks';
 
 import styles from '../../styles/Home.module.css';
 
+const tablify = (wikiString) => wikiString.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/'))
+
 const data = {
     7: {
         career: [
@@ -42,8 +44,7 @@ const data = {
         2013	Atlético Baleares	9	(1)
         2013–2014	Miramar Misiones	19	(5)
         2015–2016	Lausanne-Sport	15	(1)
-        Total		463	(138)
-        `.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        Total		463	(138)`,
         answer: 'Walter Pandiani',
         acceptableAnswers: ['walter pandiani', 'pandini', 'pandiani']
     },
@@ -53,7 +54,7 @@ const data = {
         1998–2000	Bolton Wanderers	86	(8)
         2000–2004	Charlton Athletic	123	(16)
         2004–2007	Fulham	35	(4)
-        Total		310	(42)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        Total		310	(42)`,
         answer: 'Claus Jensen',
         acceptableAnswers: ['claus jensen', 'jensen', 'clause jensen', 'klaus jensen', 'claus jenson', 'jenson', 'klaus jenson', 'jennson', 'jennsen']
     },
@@ -63,7 +64,7 @@ const data = {
         1998–2003	Newcastle United	130	(11)
         2003–2005	Leicester City	51	(1)
         2005–2011	AEL	144	(4)
-        Total		514	(31)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        Total		514	(31)`,
         answer: 'Nikos Dabizas',
         acceptableAnswers: ['nikos dabizas', 'niko dabizas', 'dabizas', 'dabisaz', 'dabezas', 'nikos dabezas']
     },
@@ -76,7 +77,7 @@ const data = {
         2005–2008	Zaragoza	71	(2)
         2009	New York Red Bulls	17	(1)
         2010	Kitchee	0	(0)
-        Total		281	(15)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        Total		281	(15)`,
         answer: 'Albert Celades',
         acceptableAnswers: ['albert celades', 'celades', 'calades', 'albert calades', 'caledas', 'albert caledas', 'celedas', 'albert celedas']
     },
@@ -84,9 +85,37 @@ const data = {
         career: `1997–2001	CS Sfaxien	103	(13)
         2001–2006	Ajax	99	(2)
         2006–2007	Manchester City	20	(1)
-        Total		222	(16)`.split('\n').map(i => i.replace('\t', '/').replace('\t', '/').replace('\t', '/')),
+        Total		222	(16)`,
         answer: 'Hatem Trabelsi',
         acceptableAnswers: ['hatem trabelsi', 'trabelsi', 'trabelsy', 'trabelsie', 'hatem trabelsy', 'hatem trabelsie', 'hartem trabelsi', 'hartem trabelsy']
+    },
+    13: {
+        career: `1991–1996	Red Star	137	(42)
+        1996–2000	Auxerre	107	(25)
+        2000–2001	Lyon	36	(13)
+        2001–2005	Fulham	54	(11)
+        2003–2005	→ Marseille (loan)	54	(16)
+        2005–2006	VfL Wolfsburg	21	(1)
+        2006–2007	Lorient	22	(1)
+        2009–2011	Aubervilliers	44	(13)
+        2011–2012	Red Star	20	(2)
+        Total		495	(124)`,
+        answer: 'Steve Marlet',
+        acceptableAnswers: ['steve marlet', 'steve marlett', 'marlet', 'marlett', 'marlette', 'steve marlette']
+    },
+    14: {
+        career: `2001–2007	Southampton	68	(3)
+        2003	→ Walsall (loan)	10	(0)
+        2004	→ Watford (loan)	8	(0)
+        2007–2013	Fulham	127	(4)
+        2013–2014	Reading	9	(0)
+        2014	Burnley	7	(0)
+        2014–2015	West Bromwich Albion	19	(0)
+        2015–2018	Derby County	69	(0)
+        2016	→ Fulham (loan)	7	(0)
+        Total		328	(7)`,
+        answer: 'Chris Baird',
+        acceptableAnswers: ['chris baird', 'baird', 'chris bird', 'bird', 'biard', 'chris biard', 'bard', 'chris bard']
     }
 };
 
@@ -205,7 +234,7 @@ export default function Play() {
                                     <th className={styles.cell}>(goals)</th>
                                 </tr>
                             {
-                                career.map((team, i) => {
+                                tablify(career).map((team, i) => {
                                     const n = count / TIME;
                                     const style = n < i && !correct && !giveUp ? hiddenStyle : shownStyle;
                                     return (<tr key={i} style={style}>
